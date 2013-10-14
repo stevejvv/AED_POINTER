@@ -2,39 +2,61 @@
 <html>
 <head>
 	<title>AED-POINTER.eu</title>
-	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1">
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="normalize.css">
 	<link rel="stylesheet" href="main_tickets.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+	
+	<!--[if IE]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDSMTHUIyndywwgyws3_C34P5LognZxgLc&sensor=false"></script>
+	<script src="js_maps_test.js"></script>
 	
 	<script>
-	function reducemap() {
-	document.getElementById("map-canvas").style.height= document.getElementById("map-canvas").style.height * 2;
-	google.maps.event.trigger( map, "resize" );
-	}
-	
-	
-	
-	var map;
-	function initialize() {
-	  var mapOptions = {
-	    zoom: 14,
-	    center: new google.maps.LatLng(48.858201, 2.294501),
-	    mapTypeId: google.maps.MapTypeId.ROADMAP
-	  };
-	  map = new google.maps.Map(document.getElementById('map-canvas'),
-	      mapOptions);
-	}
+		$(function() {
+			var pull 		= $('#pull');
+				menu 		= $('nav ul');
+				menuHeight	= menu.height();
 
-	google.maps.event.addDomListener(window, 'load', initialize);
-	
-	
-	
-	
+			$(pull).on('click', function(e) {
+				e.preventDefault();
+				menu.slideToggle();
+			});
+
+			$(window).resize(function(){
+        		var w = $(window).width();
+        		if(w > 320 && menu.is(':hidden')) {
+        			menu.removeAttr('style');
+        		}
+    		});
+		});
 	</script>
+
+</head>
+<body onload="getMarkerAddress()">
+
+	<nav class="clearfix">
+		<ul class="clearfix">
+			<li><a href="#">Find</a></li>
+			<li><a href="#">Register</a></li>
+			<li><a href="#">Notify</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Empty</a></li>
+			<li><a href="#">Empty</a></li>
+		</ul>
+		<a href="#" id="pull">AED-Pointer.eu</a>
+	</nav>
+	<div id="input_container">
+		<input>
+		<button>Search</button>
+	</div>
+	<div id="map-container">
+		<div id="map-canvas" style="width:100%; height:250px;"></div>
+	</div>
 	
-<body>
-	<div id="body_container">
+	<!-- >	<div id="addressResult"></div>  -->
+		<div id="body_container">
 		
 		<div class="tickets_outer_container">
 			<div class= "tickets_inner_container">
@@ -43,8 +65,7 @@
 					<div class="tickets_name">Ascot IMS</div>
 					<div class="tickets_adress">Grande Rue, 133, Nancy, 54000 France</div>
 				</div>
-				<div id="map-canvas" width="100%" height="50px"></div>
-				<img  onclick="reducemap()" src="assets/map_screenshot.png" width="100%"  alt="Map Screenshot">
+				<img class="screenshot" src="assets/map_screenshot.png" width="100%"  alt="Map Screenshot">
 				<div class="tickets_ead_available">This AED is available <br />right now</div>
 				<div class="tickets_indoor_location">
 					<div class="tickets_indoor_location_title">Indoor Location</div>
@@ -70,6 +91,72 @@
 				<div class="tickets_get_direction">Get directions from <br />google map</div>	
 			</div>
 		</div>
+		
+		<div class="tickets_outer_container">
+			<div class= "tickets_inner_container">
+				<img src="assets/no_pic.jpg" width="20%"  alt="No Pic">
+				<div class="tickets_header">
+					<div class="tickets_name">Ascot IMS</div>
+					<div class="tickets_adress">Grande Rue, 133, Nancy, 54000 France</div>
+				</div>
+				<img class="screenshot" src="assets/map_screenshot.png" width="100%"  alt="Map Screenshot">
+				<div class="tickets_ead_available">This AED is available <br />right now</div>
+				<div class="tickets_indoor_location">
+					<div class="tickets_indoor_location_title">Indoor Location</div>
+					<div class="tickets_indoor_location_content">Under the staircase, on the first floor on the left of the vending machine</div>
+				</div>
+				<div class="tickets_get_direction">Get directions from <br />google map</div>	
+			</div>
+		</div>
+		
+		<div class="tickets_outer_container">
+			<div class= "tickets_inner_container">
+				<img src="assets/no_pic.jpg" width="20%"  alt="No Pic">
+				<div class="tickets_header">
+					<div class="tickets_name">Ascot IMS</div>
+					<div class="tickets_adress">Grande Rue, 133, Nancy, 54000 France</div>
+				</div>
+				<img src="assets/map_screenshot.png" width="100%"  alt="Map Screenshot">
+				<div class="tickets_ead_unavailable">This AED is unavailable <br />right now</div>
+				<div class="tickets_indoor_location">
+					<div class="tickets_indoor_location_title">Indoor Location</div>
+					<div class="tickets_indoor_location_content">Under the staircase, on the first floor on the left of the vending machine</div>
+				</div>
+				<div class="tickets_get_direction">Get directions from <br />google map</div>	
+			</div>
+		</div>	<div class="tickets_outer_container">
+				<div class= "tickets_inner_container">
+					<img src="assets/no_pic.jpg" width="20%"  alt="No Pic">
+					<div class="tickets_header">
+						<div class="tickets_name">Ascot IMS</div>
+						<div class="tickets_adress">Grande Rue, 133, Nancy, 54000 France</div>
+					</div>
+					<img class="screenshot" src="assets/map_screenshot.png" width="100%"  alt="Map Screenshot">
+					<div class="tickets_ead_available">This AED is available <br />right now</div>
+					<div class="tickets_indoor_location">
+						<div class="tickets_indoor_location_title">Indoor Location</div>
+						<div class="tickets_indoor_location_content">Under the staircase, on the first floor on the left of the vending machine</div>
+					</div>
+					<div class="tickets_get_direction">Get directions from <br />google map</div>	
+				</div>
+			</div>
+
+			<div class="tickets_outer_container">
+				<div class= "tickets_inner_container">
+					<img src="assets/no_pic.jpg" width="20%"  alt="No Pic">
+					<div class="tickets_header">
+						<div class="tickets_name">Ascot IMS</div>
+						<div class="tickets_adress">Grande Rue, 133, Nancy, 54000 France</div>
+					</div>
+					<img src="assets/map_screenshot.png" width="100%"  alt="Map Screenshot">
+					<div class="tickets_ead_unavailable">This AED is unavailable <br />right now</div>
+					<div class="tickets_indoor_location">
+						<div class="tickets_indoor_location_title">Indoor Location</div>
+						<div class="tickets_indoor_location_content">Under the staircase, on the first floor on the left of the vending machine</div>
+					</div>
+					<div class="tickets_get_direction">Get directions from <br />google map</div>	
+				</div>
+			</div>
 	
 	</div>	
 </body>

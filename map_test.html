@@ -8,18 +8,11 @@
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDSMTHUIyndywwgyws3_C34P5LognZxgLc&sensor=false"></script>
 	
 	<script>
-	function reducemap() {
-	document.getElementById("map-canvas").style.height="150px";
-	google.maps.event.trigger( map, "resize" );
-	}
-	
-	
-	
 	var map;
 	function initialize() {
 	  var mapOptions = {
 	    zoom: 14,
-	    center: new google.maps.LatLng(48.858201, 2.294501°),
+	    center: new google.maps.LatLng(-34.397, 150.644),
 	    mapTypeId: google.maps.MapTypeId.ROADMAP
 	  };
 	  map = new google.maps.Map(document.getElementById('map-canvas'),
@@ -27,50 +20,14 @@
 	}
 
 	google.maps.event.addDomListener(window, 'load', initialize);
-	
-	
-	
-	
+
 	</script>
-	
+
+
+</head>	
+
+
 <body>
-	<div id="body_container">
-		
-		<div class="tickets_outer_container">
-			<div class= "tickets_inner_container">
-				<img src="assets/no_pic.jpg" width="20%"  alt="No Pic">
-				<div class="tickets_header">
-					<div class="tickets_name">Ascot IMS</div>
-					<div class="tickets_adress">Grande Rue, 133, Nancy, 54000 France</div>
-				</div>
-				<div id="map-canvas" width="100%" height="50px"></div>
-				<img  onclick="reducemap()" src="assets/map_screenshot.png" width="100%"  alt="Map Screenshot">
-				<div class="tickets_ead_available">This AED is available <br />right now</div>
-				<div class="tickets_indoor_location">
-					<div class="tickets_indoor_location_title">Indoor Location</div>
-					<div class="tickets_indoor_location_content">Under the staircase, on the first floor on the left of the vending machine</div>
-				</div>
-				<div class="tickets_get_direction">Get directions from <br />google map</div>	
-			</div>
-		</div>
-		
-		<div class="tickets_outer_container">
-			<div class= "tickets_inner_container">
-				<img src="assets/no_pic.jpg" width="20%"  alt="No Pic">
-				<div class="tickets_header">
-					<div class="tickets_name">Ascot IMS</div>
-					<div class="tickets_adress">Grande Rue, 133, Nancy, 54000 France</div>
-				</div>
-				<img src="assets/map_screenshot.png" width="100%"  alt="Map Screenshot">
-				<div class="tickets_ead_unavailable">This AED is unavailable <br />right now</div>
-				<div class="tickets_indoor_location">
-					<div class="tickets_indoor_location_title">Indoor Location</div>
-					<div class="tickets_indoor_location_content">Under the staircase, on the first floor on the left of the vending machine</div>
-				</div>
-				<div class="tickets_get_direction">Get directions from <br />google map</div>	
-			</div>
-		</div>
-	
-	</div>	
+	<div id="map-canvas"></div>
 </body>
 </html>
