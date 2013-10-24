@@ -1,0 +1,307 @@
+
+
+
+
+
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	  <head>
+	    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	    <title>Google Maps AJAX + mySQL/PHP Example</title>
+	    <link rel="stylesheet" href="normalize.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	    <script src="jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDSMTHUIyndywwgyws3_C34P5LognZxgLc&sensor=false"></script>
+		<link rel="stylesheet" href="search_map.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		
+
+		
+
+	    <script type="text/javascript">
+	//<![CDATA[
+	    var map;
+	    var markers = [];
+	    var infoWindow;
+		
+	    function load() {
+		
+	      map = new google.maps.Map(document.getElementById("map"), {
+	        center: new google.maps.LatLng(50.4635, 6.0500),
+	        zoom: 8,
+	        mapTypeId: 'roadmap',
+			disableDefaultUI: true,
+			
+	       // mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU}
+	      });
+	      infoWindow = new google.maps.InfoWindow();
+		
+			
+		}
+	   
+	
+
+	   function searchLocations() {
+	     var address = document.getElementById("addressInput").value;
+	     var geocoder = new google.maps.Geocoder();
+	     geocoder.geocode({address: address}, function(results, status) {
+	       if (status == google.maps.GeocoderStatus.OK) {
+	        searchLocationsNear(results[0].geometry.location);
+	       } else {
+	         alert(address + ' not found');
+	       }
+	     });
+	   }
+
+	   function clearLocations() {
+	    document.getElementById("test_container").innerHTML = "";
+		infoWindow.close();
+	     for (var i = 0; i < markers.length; i++) {
+	       markers[i].setMap(null);
+	     }
+	     markers.length = 0;
+	   }
+
+	   function searchLocationsNear(center) {
+	     clearLocations();
+		 var radius = 5;
+	     var searchUrl = 'phpsqlsearch_genxml.php?lat=' + center.lat() + '&lng=' + center.lng() + '&radius=' + radius;
+	     
+		downloadUrl(searchUrl, function(data) {
+	       var xml = parseXml(data);
+	       var markerNodes = xml.documentElement.getElementsByTagName("marker");
+	       var bounds = new google.maps.LatLngBounds();
+	       for (var i = 0; i < markerNodes.length; i++) {
+	         var name = markerNodes[i].getAttribute("name");
+	         var address = markerNodes[i].getAttribute("address");
+	         var distance = parseFloat(markerNodes[i].getAttribute("distance"));
+	         var latlng = new google.maps.LatLng(
+	              parseFloat(markerNodes[i].getAttribute("lat")),
+	              parseFloat(markerNodes[i].getAttribute("lng")));
+			var description = markerNodes[i].getAttribute("description");
+	         
+	         createMarker(latlng, name, address, description);
+	         bounds.extend(latlng);
+	
+	
+			var text_output = document.getElementById("test_container");
+			text_output.innerHTML += "<div onclick=\"address_onclick"+i+"()\"><div class=\"available\"></div><div class=\"info_container\">"+ name + "<br /> <span>"+distance.toFixed(1)+"km</span><br /></div><div class=\"button\">Get Google maps directions</div></div>";
+		
+	       }
+		
+		/*	if (navigator.geolocation)
+			            {
+               navigator.geolocation.getCurrentPosition(showCurrentLocation);
+           }
+           else
+           {
+              alert("Geolocation API not supported.");
+           }
+
+           function showCurrentLocation(position)
+           {
+				var iconBase = 'assets/'
+               var latitude = position.coords.latitude;
+               var longitude = position.coords.longitude;
+               var coords = new google.maps.LatLng(latitude, longitude);
+           //place the initial marker
+           var marker = new google.maps.Marker({
+           position: coords,
+           map: map,
+		   icon: iconBase + 'gpsloc.png',
+			
+           title: "Current location!"
+           });
+           }
+	*/
+	
+	
+	       map.fitBounds(bounds);
+		 
+		
+		
+		
+	      });
+	
+	    }
+	
+	
+	
+	
+		function address_onclick0() {
+			
+			var extend_win = document.getElementById("test_container").childNodes;
+			google.maps.event.trigger(markers[0], 'click');	
+		
+			extend_win[0].style.height ="126px";
+			extend_win[1].style.height ="60px";
+			extend_win[2].style.height ="60px";
+			extend_win[3].style.height ="60px";
+			extend_win[4].style.height ="60px";
+			extend_win[5].style.height ="60px";
+			
+			
+		}
+		function address_onclick1() {
+			
+	
+			var extend_win = document.getElementById("test_container").childNodes;
+			google.maps.event.trigger(markers[1], 'click');	
+			
+			
+			extend_win[0].style.height ="60px";
+			extend_win[1].style.height ="126px";
+			extend_win[2].style.height ="60px";
+			extend_win[3].style.height ="60px";
+			extend_win[4].style.height ="60px";
+			extend_win[5].style.height ="60px";
+		}
+		function address_onclick2() {
+			
+			var extend_win = document.getElementById("test_container").childNodes;
+			google.maps.event.trigger(markers[2], 'click');	
+			
+			
+			extend_win[0].style.height ="60px";
+			extend_win[1].style.height ="60px";
+			extend_win[2].style.height ="126px";
+			extend_win[3].style.height ="60px";
+			extend_win[4].style.height ="60px";
+			extend_win[5].style.height ="60px";
+		}
+		function address_onclick3() {
+			
+	
+			var extend_win = document.getElementById("test_container").childNodes;
+			google.maps.event.trigger(markers[3], 'click');	
+			
+			extend_win[0].style.height ="60px";
+			extend_win[1].style.height ="60px";
+			extend_win[2].style.height ="60px";
+			extend_win[3].style.height ="126px";
+			extend_win[4].style.height ="60px";
+			extend_win[5].style.height ="60px";
+		}
+		function address_onclick4() {
+			
+	
+			var extend_win = document.getElementById("test_container").childNodes;
+			google.maps.event.trigger(markers[4], 'click');	
+			
+			
+			extend_win[0].style.height ="60px";
+			extend_win[1].style.height ="60px";
+			extend_win[2].style.height ="60px";
+			extend_win[3].style.height ="60px";
+			extend_win[4].style.height ="126px";
+			extend_win[5].style.height ="60px";
+		}
+		function address_onclick5() {
+			
+	
+			var extend_win = document.getElementById("test_container").childNodes;
+			google.maps.event.trigger(markers[5], 'click');	
+		
+			
+			extend_win[0].style.height ="60px";
+			extend_win[1].style.height ="60px";
+			extend_win[2].style.height ="60px";
+			extend_win[3].style.height ="60px";
+			extend_win[4].style.height ="60px";
+			extend_win[5].style.height ="126px";
+		}
+		
+		
+	    function createMarker(latlng, name, address) {
+	      var html = "<b >" + name + "</b> <br/>" + address;
+	      var marker = new google.maps.Marker({
+	        map: map,
+	        position: latlng
+	      });
+	      google.maps.event.addListener(marker, 'click', function() {
+	        infoWindow.setContent(html);
+	        infoWindow.open(map, marker);
+	      });
+	      markers.push(marker);
+	    }
+
+	    
+
+	    function downloadUrl(url, callback) {
+	      var request = window.ActiveXObject ?
+	          new ActiveXObject('Microsoft.XMLHTTP') :
+	          new XMLHttpRequest;
+
+	      request.onreadystatechange = function() {
+	        if (request.readyState == 4) {
+	          request.onreadystatechange = doNothing;
+	          callback(request.responseText, request.status);
+	        }
+	      };
+
+	      request.open('GET', url, true);
+	      request.send(null);
+	    }
+
+	    function parseXml(str) {
+	      if (window.ActiveXObject) {
+	        var doc = new ActiveXObject('Microsoft.XMLDOM');
+	        doc.loadXML(str);
+	        return doc;
+	      } else if (window.DOMParser) {
+	        return (new DOMParser).parseFromString(str, 'text/xml');
+	      }
+	    }
+
+	    function doNothing() {}
+
+	    //]]>
+	  </script>
+	  </head>
+
+	  <body onload="load()">
+		<nav class="clearfix">
+			<ul class="clearfix">
+				<li><a href="#">Find</a></li>
+				<li><a href="#">Register</a></li>
+				<li><a href="#">Notify</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Empty</a></li>
+				<li><a href="#">Empty</a></li>
+			</ul>
+			<a href="#" id="pull">AED-Pointer.eu</a>
+		</nav>
+	 <div id="search_container">
+	     <input type="text" id="addressInput" size="15"/>
+	    	
+	    <input type="button" onclick="searchLocations()" value="Search"/>
+		<input type="button" value="Current Position"/>
+	 </div>
+	
+	<div id="body_container">		
+		<div id="title">Results</div>
+	    <div id="test_container"></div>
+		<div id="map"></div>
+ </div>		
+
+
+		<script>
+			$(function() {
+				var pull 		= $('#pull');
+					menu 		= $('nav ul');
+					menuHeight	= menu.height();
+
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
+
+				$(window).resize(function(){
+	        		var w = $(window).width();
+	        		if(w > 320 && menu.is(':hidden')) {
+	        			menu.removeAttr('style');
+	        		}
+	    		});
+			});
+		</script>
+	</body>
+	</html>
+	
