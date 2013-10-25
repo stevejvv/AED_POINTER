@@ -1,3 +1,13 @@
+$(function() {
+    $("[name=times]").click(function(){
+            $('.toHide').hide();
+            $("#timesContainer"+$(this).val()).show('slow');
+    });
+ });
+
+
+
+
 jQuery(function() {
 
     // Use default settings

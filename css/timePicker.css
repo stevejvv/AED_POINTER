@@ -2,6 +2,31 @@ body {
 	font-size: 1em;
 }
 
+input {
+	border-radius:3px;
+	border: thin solid #d2d2d2; 
+}
+#timeOuterContainer {
+	border: thin solid black;
+	padding:15px;
+	width:330px;
+	margin:15px;
+}
+#timesContainer1, #timesContainer2  {
+	width:290px;
+	padding:15px;
+	line-height:1.2em;
+	background-color:#e5e5e5;
+}
+
+
+#timesContainer1 div div {
+display:inline;
+}
+
+
+
+/*TIME-PICKER*/
 div.time-picker {
   position: absolute;
   height: 191px;
@@ -30,9 +55,4 @@ div.time-picker li {
 div.time-picker li.selected {
   background: #0063CE;
   color: #fff;
-}
-input {
-	border-radius:3px;
-	border: thin solid #d2d2d2; 
-	font-size: 1em;
 }
