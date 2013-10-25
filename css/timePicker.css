@@ -1,28 +1,53 @@
 body {
 	font-size: 1em;
+	background-color:#efeeea;
 }
 
 input {
 	border-radius:3px;
 	border: thin solid #d2d2d2; 
+	margin-top:3px;
+	margin-bottom:3px;
+	background-color:#efeeea;
+	
+	
 }
-#timeOuterContainer {
-	border: thin solid black;
+form span {
+	color:red;
+	font-size:.7em;
+}
+#timeOuterContainer, #personalInfoContainer, #addressContainer, #submitContainer {
+	border: thin solid #e5e5e5;
 	padding:15px;
 	width:330px;
 	margin:15px;
+	background-color:white;
+	border-radius:3px;
+	
+	
 }
 #timesContainer1, #timesContainer2  {
-	width:290px;
+	width:300px;
 	padding:15px;
 	line-height:1.2em;
-	background-color:#e5e5e5;
+	background-color:#efeeea;
+	border-radius:3px;
+	
 }
 
 
 #timesContainer1 div div {
 display:inline;
 }
+
+
+#error {
+	color:red;
+	font-size:.7em;
+	
+	
+}
+
 
 
 

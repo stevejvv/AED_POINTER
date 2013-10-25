@@ -2,17 +2,41 @@
 
 	<head>
 	<title>form v.1</title>
-	<link rel="stylesheet" href="css/timePicker.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/css_reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	
+	<link rel="stylesheet" href="css/timePicker.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
 	<script src="js/jquery.timePicker.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/time_picker_v1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/form_validation.js" type="text/javascript" charset="utf-8"></script>
+
+
 
 </head>
   <body>
 	<br /><br />
+
+<form id="myform" action="php.php" method="post" name="myform" onsubmit="return validateForm()">
+	<div id="personalInfoContainer">
+	<h1>GENERAL INFORMATION</h1>
+	<div id="error"></div>
+	<br />
+	Name<span>* </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input onfocus="colorBgFunc(this)" type="text" name="name" id="name"><br>
+	Company<span>* </span> &nbsp;<input onfocus="colorBgFunc(this)" type="text" name="company" id="company"><br>
+	Phone<span>* </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input onfocus="colorBgFunc(this)" type="text" name="phone" id="phone"><br>
+	Email<span>* </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input onfocus="colorBgFunc(this)" type="text" name="email" id="email"><br>
+	</div>
+	
+	<div id="addressContainer">
+	<h1>ADDRESS<span>* </span></h1>
+	<br />
+	Address  <input type="text" name="name"><br>
+	
+	</div>
+	
 <div id="timeOuterContainer">	
-	<h1>TIME AVAILIBLITY</h1>
+	<h1>TIME AVAILIBLITY<span>* </span></h1>
 	<br />
 	<input type="radio" name="times" value="2"> 24/7 (Open all the time)<br />
 	<input type="radio" name="times" value="1"> Custom
@@ -20,52 +44,52 @@
 	
 	<div id="timesContainer1" class="toHide" style="display:none">	
 		<div> 
-			<input type="checkbox" id="monday" />Monday &nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="monday" id="monday" />Monday &nbsp;&nbsp;&nbsp;&nbsp;
 			<div id="mondayTimes"> - From  
-				<input type="text" id="time1" size="6" value="00:00" /> to 
-				<input type="text" id="time2" size="6" value="00:00" />
+				<input type="text" name="time1" id="time1" size="6" value="00:00" /> to 
+				<input type="text" name="time2" id="time2" size="6" value="00:00" />
 			</div>
 		</div>
 		<div> 
-			<input type="checkbox" id="tuesday" />Tuesday &nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="tuesday" id="tuesday" />Tuesday &nbsp;&nbsp;&nbsp;&nbsp;
 			<div id="tuesdayTimes"> - From  
-				<input type="text" id="time3" size="6" value="00:00" /> to 
-				<input type="text" id="time4" size="6" value="00:00" />
+				<input type="text" name="time3" id="time3" size="6" value="00:00" /> to 
+				<input type="text" name="time4" id="time4" size="6" value="00:00" />
 			</div>
 		</div>
 		<div> 
-			<input type="checkbox" id="wednesday" />Wednesday
+			<input type="checkbox" name="wednesday" id="wednesday" />Wednesday
 			<div id="wednesdayTimes"> - From  
-				<input type="text" id="time5" size="6" value="00:00" /> to 
-				<input type="text" id="time6" size="6" value="00:00" />
+				<input type="text" name="time5" id="time5" size="6" value="00:00" /> to 
+				<input type="text" name="time6" id="time6" size="6" value="00:00" />
 			</div>
 		</div>
 		<div> 
-			<input type="checkbox" id="thursday" />Thursday &nbsp;&nbsp;
+			<input type="checkbox" name="thursday" id="thursday" />Thursday &nbsp;&nbsp;
 			<div id="thursdayTimes"> - From  
-				<input type="text" id="time7" size="6" value="00:00" /> to 
-				<input type="text" id="time8" size="6" value="00:00" />
+				<input type="text" name="time7" id="time7" size="6" value="00:00" /> to 
+				<input type="text" name="time8" id="time8" size="6" value="00:00" />
 			</div>
 		</div>
 		<div> 
-			<input type="checkbox" id="friday" />Friday &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="friday" id="friday" />Friday &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<div id="fridayTimes"> - From  
-				<input type="text" id="time9" size="6" value="00:00" /> to 
-				<input type="text" id="time10" size="6" value="00:00" />
+				<input type="text" name="time9" id="time9" size="6" value="00:00" /> to 
+				<input type="text" name="time10" id="time10" size="6" value="00:00" />
 			</div>
 		</div>
 		<div> 
-			<input type="checkbox" id="saturday" />Saturday &nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="saturday" id="saturday" />Saturday &nbsp;&nbsp;&nbsp;
 			<div id="saturdayTimes"> - From  
-				<input type="text" id="time11" size="6" value="00:00" /> to 
-				<input type="text" id="time12" size="6" value="00:00" />
+				<input type="text" name="time11" id="time11" size="6" value="00:00" /> to 
+				<input type="text" name="time12" id="time12" size="6" value="00:00" />
 			</div>
 		</div>
 		<div> 
-			<input type="checkbox" id="sunday" />Sunday &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="checkbox" name="sunday" id="sunday" />Sunday &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<div id="sundayTimes"> - From  
-				<input type="text" id="time13" size="6" value="00:00" /> to 
-				<input type="text" id="time14" size="6" value="00:00" />
+				<input type="text" name="time13" id="time13" size="6" value="00:00" /> to 
+				<input type="text" name="time14" id="time14" size="6" value="00:00" />
 			</div>
 		</div>
 		
@@ -77,7 +101,10 @@
 </div>
 
 
-
+<div id="submitContainer">
+	<input type="submit" value="Submit" >		
+</div>
+</form>
 
 
 
