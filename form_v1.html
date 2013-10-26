@@ -4,20 +4,22 @@
 	<title>form v.1</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/css_reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
-	
 	<link rel="stylesheet" href="css/timePicker.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDSMTHUIyndywwgyws3_C34P5LognZxgLc&sensor=false"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
 	<script src="js/jquery.timePicker.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/time_picker_v1.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/form_validation.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/form_map.js" type="text/javascript" charset="utf-8"></script>
 
 
 
 </head>
-  <body>
+<body>
 	<br /><br />
 
-<form id="myform" action="php.php" method="post" name="myform" onsubmit="return validateForm()">
+<form id="myform" action="php/php.php" method="post" name="myform" onsubmit="return validateForm()">
 	<div id="personalInfoContainer">
 	<h1>GENERAL INFORMATION</h1>
 	<div id="error"></div>
@@ -28,12 +30,18 @@
 	Email<span>* </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input onfocus="colorBgFunc(this)" type="text" name="email" id="email"><br>
 	</div>
 	
-	<div id="addressContainer">
+<div id="addressContainer">
 	<h1>ADDRESS<span>* </span></h1>
 	<br />
-	Address  <input type="text" name="name"><br>
-	
+	Address  <input type="text" name="address" id="address">
+	<input type="button" onclick="getMarkerAddress()" value="Validate">
+	<div id="map_container" style="display:none;">
+		<div id="addressResult"></div>
+		
+		<div id="map-canvas"></div>
 	</div>
+</div>
+	
 	
 <div id="timeOuterContainer">	
 	<h1>TIME AVAILIBLITY<span>* </span></h1>
@@ -99,13 +107,19 @@
 		The AED that you are registering is available all the time	
 	</div>
 </div>
-
+<div id="descriptionContainer">
+	<h1>INDOOR LOCATION OF AED<span>* </span></h1>
+	<br />
+	<textarea rows="4" cols="40" name="description" id="description" form="myform"></textarea>
+	
+</div>
 
 <div id="submitContainer">
 	<input type="submit" value="Submit" >		
 </div>
-</form>
+<div id="hiddenOutput"></div>
 
+</form>
 
 
 

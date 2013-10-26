@@ -3,7 +3,7 @@ body {
 	background-color:#efeeea;
 }
 
-input {
+input, textarea {
 	border-radius:3px;
 	border: thin solid #d2d2d2; 
 	margin-top:3px;
@@ -16,7 +16,7 @@ form span {
 	color:red;
 	font-size:.7em;
 }
-#timeOuterContainer, #personalInfoContainer, #addressContainer, #submitContainer {
+#timeOuterContainer, #personalInfoContainer, #addressContainer, #submitContainer, #descriptionContainer {
 	border: thin solid #e5e5e5;
 	padding:15px;
 	width:330px;
@@ -26,7 +26,38 @@ form span {
 	
 	
 }
-#timesContainer1, #timesContainer2  {
+#map_button {
+	padding:5px;
+	display:inline;
+	background-color:#4285f3;
+	color: white;
+	width:50px;
+	border-radius:3px;
+	
+}
+#map-container {
+	width:300px;
+	height:200px;
+	background-color:#efeeea;
+	
+}
+
+#map-canvas {
+	width:100%;
+	height:150px;
+}
+
+#addressResult {
+	width:300px;
+	padding:15px;
+	background-color:#efeeea;
+	font-size: .7em;
+	margin-top:15px;
+	
+	
+}
+
+#timesContainer1, #timesContainer2 {
 	width:300px;
 	padding:15px;
 	line-height:1.2em;
@@ -34,6 +65,7 @@ form span {
 	border-radius:3px;
 	
 }
+
 
 
 #timesContainer1 div div {
