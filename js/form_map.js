@@ -90,7 +90,7 @@ var coords;
 				document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  name=\"town\"  value=\""+town+"\">";
 				document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  name=\"postalCode\"  value=\""+postalCode+"\">";
 				document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  name=\"country\"  value=\""+country+"\">";
-				document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  name=\"Lat\"  value=\""+coordsLat+"\">";
+				document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  id=\"latitudeCheck\" name=\"Lat\"  value=\""+coordsLat+"\">";
 				document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  name=\"Lng\"  value=\""+coordsLng+"\">";
 			
 				

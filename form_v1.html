@@ -18,11 +18,11 @@
 </head>
 <body>
 	<br /><br />
-
+	<div id="error"></div>
 <form id="myform" action="php/php.php" method="post" name="myform" onsubmit="return validateForm()">
 	<div id="personalInfoContainer">
 	<h1>GENERAL INFORMATION</h1>
-	<div id="error"></div>
+	
 	<br />
 	Name<span>* </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input onfocus="colorBgFunc(this)" type="text" name="name" id="name"><br>
 	Company<span>* </span> &nbsp;<input onfocus="colorBgFunc(this)" type="text" name="company" id="company"><br>
@@ -31,7 +31,7 @@
 	</div>
 	
 <div id="addressContainer">
-	<h1>ADDRESS<span>* </span></h1>
+	<h1>ADDRESS<span>* </span></h1><div id="addressError"></div>
 	<br />
 	Address  <input type="text" name="address" id="address">
 	<input type="button" onclick="getMarkerAddress()" value="Validate">
@@ -46,8 +46,8 @@
 <div id="timeOuterContainer">	
 	<h1>TIME AVAILIBLITY<span>* </span></h1>
 	<br />
-	<input type="radio" name="times" value="2"> 24/7 (Open all the time)<br />
-	<input type="radio" name="times" value="1"> Custom
+	<input type="radio" name="times" id="times2" value="2"> 24/7 (Open all the time)<br />
+	<input type="radio" name="times" value="1" id="times1"> Custom
 	<br /><br />
 	
 	<div id="timesContainer1" class="toHide" style="display:none">	
