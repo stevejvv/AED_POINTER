@@ -3,6 +3,7 @@ $name         = $_POST['name'];
 $company      = $_POST['company'];
 $phone        = $_POST['phone'];
 $email        = $_POST['email'];
+$address      = $_POST['address'];
 
 $times        = $_POST['times'];
 $monday       = $_POST['monday'];
@@ -45,8 +46,15 @@ $Lng          = $_POST['Lng'];
 	
 </head>
 <body>
-<div >
-
+<div id="bodyContainer">
+	<div id="name"><?php echo $name?></div>
+	<div id="company"><?php echo $company?></div>
+	<div id="phone"><?php echo $phone?></div>
+	<div id="email"><?php echo $email?></div>
+	<div id="address"><?php echo $address?></div>
+	<div id="map-canvas"></div>
+	<div id="times"></div>
+	<div id="description"><?php echo $description?></div>
 </div>
 </body>
 </html>

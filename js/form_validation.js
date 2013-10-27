@@ -66,13 +66,13 @@ function validateForm(){
 	
 	// 5 TIME VALIDATION
 	
-	if (document.getElementById("times1").checked){
+	//if (document.getElementById("times1").checked){
 		
-	} else if (document.getElementById("times2").checked){
+	//} else if (document.getElementById("times2").checked){
 		
-	} else {
-		validated[5] = 1;	
-	}
+	//} else {
+	//	validated[5] = 1;	
+	//}
 	
 	
 	// 6 DESCRIPTION VALIDATION
