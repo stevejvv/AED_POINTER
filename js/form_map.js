@@ -47,36 +47,8 @@ var coords;
 				document.getElementById("addressResult").innerHTML = "RETURNED ADDRESS <br /><br />" + address +"<br /><br />Latitude: "+ coordsLat + "<br />Longitude: "+ coordsLng;
 				
 			
-				var streetNumber;
-				var route;
-				var town;
-				var postalCode
 				var country;
 				
-				for (i=0;i<results[0].address_components.length;i++){
-				    for (j=0;j<results[0].address_components[i].types.length;j++){
-				       if(results[0].address_components[i].types[j]=="street_number")
-				          streetNumber = results[0].address_components[i].long_name
-				    }
-				}
-				for (i=0;i<results[0].address_components.length;i++){
-				    for (j=0;j<results[0].address_components[i].types.length;j++){
-				       if(results[0].address_components[i].types[j]=="route")
-				          route = results[0].address_components[i].long_name
-				    }
-				}
-				for (i=0;i<results[0].address_components.length;i++){
-				    for (j=0;j<results[0].address_components[i].types.length;j++){
-				       if(results[0].address_components[i].types[j]=="administrative_area_level_2")
-				          town = results[0].address_components[i].long_name
-				    }
-				}
-				for (i=0;i<results[0].address_components.length;i++){
-				    for (j=0;j<results[0].address_components[i].types.length;j++){
-				       if(results[0].address_components[i].types[j]=="postal_code")
-				          postalCode = results[0].address_components[i].long_name
-				    }
-				}
 				for (i=0;i<results[0].address_components.length;i++){
 				    for (j=0;j<results[0].address_components[i].types.length;j++){
 				       if(results[0].address_components[i].types[j]=="country")
@@ -85,10 +57,7 @@ var coords;
 				}
 				document.getElementById("hiddenOutput").innerHTML = "";
 				
-				document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  name=\"streetNumber\"  value=\""+streetNumber+"\">";
-				document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  name=\"route\"  value=\""+route+"\">";
-				document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  name=\"town\"  value=\""+town+"\">";
-				document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  name=\"postalCode\"  value=\""+postalCode+"\">";
+				document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  name=\"fullAddress\"  value=\""+address+"\">";
 				document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  name=\"country\"  value=\""+country+"\">";
 				document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  id=\"latitudeCheck\" name=\"Lat\"  value=\""+coordsLat+"\">";
 				document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  name=\"Lng\"  value=\""+coordsLng+"\">";
