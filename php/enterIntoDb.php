@@ -4,7 +4,7 @@ $company      = $_POST['company'];
 $phone        = $_POST['phone'];
 $email        = $_POST['email'];
 
-$address      = $_POST['fullAddress'];
+$address      = $_POST['address'];
 
 $country      = $_POST['country'];
 $Lat          = $_POST['Lat'];
@@ -34,8 +34,15 @@ or die (mysql_error());
 
 mysql_select_db("AED_POINTER", $AED_POINTER);
 $sql = "
-INSERT INTO tempDb (name, company,phone,email,address,streetNumber,route,town,postalCode,country,Lat,Lng,time1,time2,time3,time4,time5,time6,time7,time8,time9,time10,time11,time12,time13,time14,description) VALUES ('$name','$company','$phone','$email','$address','$streetNumber','$route','$town','$postalCode','$country','$Lat','$Lng','$time1','$time2','$time3','$time4','$time5','$time6','$time7','$time8','$time9','$time10','$time11','$time12','$time13','$time14','$description')
+INSERT INTO tempDb (name, company,phone,email,address,country,Lat,Lng,time1,time2,time3,time4,time5,time6,time7,time8,time9,time10,time11,time12,time13,time14,description) VALUES ('$name','$company','$phone','$email','$address','$country','$Lat','$Lng','$time1','$time2','$time3','$time4','$time5','$time6','$time7','$time8','$time9','$time10','$time11','$time12','$time13','$time14','$description')
 ";
+
+
+
+$result = mysql_query("SELECT * FROM tempDb", $AED_POINTER);
+$num_rows = mysql_num_rows($result);
+
+
 
 mysql_query($sql, $AED_POINTER);	
 	
@@ -59,6 +66,7 @@ mysql_query($sql, $AED_POINTER);
 	
 </head>
 <body>
-Your registration has been successful. 
+Your registration has been successful. 	<?php echo "Number of rows: ".$num_rows?>;
+
 </body>
 </html>
