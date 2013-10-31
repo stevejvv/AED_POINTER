@@ -44,7 +44,7 @@ var coords;
 				
 	            address = results[0].formatted_address;
 				
-				document.getElementById("addressResult").innerHTML = "<br /><br />" + address +"<br /><br />Latitude: "+ coordsLat + "<br />Longitude: "+ coordsLng;
+				document.getElementById("addressResult").innerHTML = "<span>" + address +"</span><br /><br />Latitude: "+ coordsLat + "<br />Longitude: "+ coordsLng;
 				
 			
 				var country;

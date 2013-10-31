@@ -9,7 +9,12 @@ form span {
 	font-size:.7em;
 	vertical-align:top;
 }
-#basicInfoContainer, #typeContainer, #addressContainer, #submitConainer, #categoryContainer, #timeOuterContainer, #descriptionContainer {
+
+textarea {
+	width:100%;
+	height:100px;
+}
+#basicInfoContainer, #typeContainer, #addressContainer, #submitConainer, #categoryContainer, #timeOuterContainer, #descriptionContainer, #publicContainer {
 	border: thin solid #e5e5e5;
 	padding:15px;
 	width:700px;
@@ -24,15 +29,58 @@ form span {
 
 
 
+#map_button {
+	padding:5px;
+	display:inline;
+	background-color:#4285f3;
+	color: white;
+	width:50px;
+	border-radius:3px;
+	
+}
+#map-container {
+	width:300px;
+	height:200px;
+	background-color:#efeeea;
+	
+}
+
+
+#addressResult {
+
+	padding:15px;
+	background-color:#efeeea;
+	line-height:1em;	
+}
+#addressResult span{
+
+	font-weight:bold;
+	color:black;
+	font-size:1em;
+	vertical-align:middle;
+	
+}
+
+#timesContainer1, #timesContainer2 {
+	
+	padding:15px;
+	background-color:#efeeea;
+	border-radius:3px;
+	
+}
 
 
 
+#timesContainer1 div div {
+display:inline;
+}
 
 
-
-
-
-
-
+#error {
+	color:red;
+	font-size:.7em;
+	
+	
+}
 
 
