@@ -1,0 +1,38 @@
+body {
+	font-size: 1em;
+	background-color:#efeeea;
+	line-height:2em;
+}
+
+form span {
+	color:red;
+	font-size:.7em;
+	vertical-align:top;
+}
+#basicInfoContainer, #typeContainer, #addressContainer, #submitConainer, #categoryContainer, #timeOuterContainer, #descriptionContainer {
+	border: thin solid #e5e5e5;
+	padding:15px;
+	width:700px;
+	margin:15px auto;
+	background-color:white;
+	border-radius:3px;
+}
+#map-canvas {
+	height:150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
