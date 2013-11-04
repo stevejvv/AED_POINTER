@@ -1,0 +1,38 @@
+.BrowserMatrix {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.BrowserMatrix-item {
+  max-width: 10em;
+  min-width: 4em;
+  margin: 0.5em 1.5em;
+  text-align: center;
+}
+
+.BrowserMatrix-title {
+  margin: 0;
+  font-size: 0.8em;
+}
+
+.BrowserMatrix-description {
+  margin: 0 0 0.5em;
+  color: #808080;
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
+
+// Firefox doesn't yet support multiline Flexboxes
+// so we have to fake it with inline-block
+@supports not (flex-wrap: wrap) {
+  .BrowserMatrix {
+    display: block;
+    text-align: center;
+    .BrowserMatrix-item {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.HolyGrail {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+.HolyGrail-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5em;
+}
+
+.HolyGrail-content {
+  margin: 1.5em 0;
+}
+
+.HolyGrail-nav {
+  order: -1;
+}
+
+.HolyGrail-nav, .HolyGrail-ads {
+  padding: 1em;
+  border-radius: 3px;
+  background: hsla(31, 15%, 50%, 0.1);
+}
+
+@include breakpoint("large") {
+  .HolyGrail-body {
+    flex-direction: row;
+    flex: 1;
+
+    /* stupid IE10 tweener syntax */
+    -ms-flex-preferred-size: auto;
+  }
+  .HolyGrail-content {
+    flex: 1;
+    padding: 0 1.5em;
+    margin: 0;
+  }
+  .HolyGrail-nav, .HolyGrail-ads {
+    flex: 0 0 12em;
+  }
+}

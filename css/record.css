@@ -1,0 +1,45 @@
+
+
+#bodyContainer {
+	width:700px;
+	margin:0 auto;
+	background-color:#efeeea;
+}
+#recordContainer {
+	float:left;
+	width:47%;
+}
+#recordHeader {
+	height:50px;
+	text-align:center;
+	line-height:50px;
+	background-color:#8fa88f;
+	
+	
+}
+#recordFooter {
+	text-align:justify;
+	background-color:#efeeea;
+	padding: 10px;
+	
+}
+#indicateContainer {
+	float:right;
+	width:47%;
+}
+
+#indicateHeader {
+	height:50px;
+	text-align:center;
+	line-height:50px;
+	background-color:#8f99a8;
+	
+	
+}
+#indicateFooter {
+	text-align:justify;
+	background-color:#efeeea;
+	padding: 10px;
+	
+	
+}
