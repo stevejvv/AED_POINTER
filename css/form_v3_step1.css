@@ -1,7 +1,6 @@
 body {
 	font-size: 1em;
-	background-color:#efeeea;
-	line-height:2em;
+	background-color:#eaeaea;
 }
 h1 {
 	font-size:1.5em;
@@ -15,9 +14,11 @@ h1 span{
 	margin: 10px auto ;
 	text-align: center;
 	position: relative;
-	background-color:#c3bfb0;
+	background-color:#b7b7b7;
 	z-index: -2; /*put it behind the numbers*/
 	padding-top:10px;
+	padding-bottom:10px;
+	
 }
 
 
@@ -32,7 +33,7 @@ h1 span{
 	list-style-type: none;
 	color: white;
 	text-transform: uppercase;
-	font-size: 9px;
+	font-size: .9em;
 	width: 33.33%;
 	float: left;
 	position: relative;
@@ -43,7 +44,7 @@ h1 span{
 	width: 20px;
 	line-height: 20px;
 	display: block;
-	font-size: 10px;
+	font-size: .9em;
 	color: #333;
 	background: white;
 	border-radius: 10px;
@@ -99,6 +100,8 @@ textarea {
 	width:700px;
 	margin:0 auto;
 	background-color:white;
+	line-height:2em;
+	
 }
 #customContainer {
 	margin: 0 auto;

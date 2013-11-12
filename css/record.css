@@ -3,7 +3,7 @@
 #bodyContainer {
 	width:700px;
 	margin:0 auto;
-	background-color:#efeeea;
+	margin-top:100px;
 }
 #recordContainer {
 	float:left;
@@ -13,13 +13,15 @@
 	height:50px;
 	text-align:center;
 	line-height:50px;
-	background-color:#8fa88f;
-	
+	background-color:#b93f2d;	
+}
+
+#recordHeader:hover {
+	background-color:#dc7e70;	
 	
 }
 #recordFooter {
 	text-align:justify;
-	background-color:#efeeea;
 	padding: 10px;
 	
 }
@@ -32,13 +34,17 @@
 	height:50px;
 	text-align:center;
 	line-height:50px;
-	background-color:#8f99a8;
+	background-color:#26729d;
 	
+	
+}
+
+#indicateHeader:hover {
+	background-color:#54a7d5;	
 	
 }
 #indicateFooter {
 	text-align:justify;
-	background-color:#efeeea;
 	padding: 10px;
 	
 	
