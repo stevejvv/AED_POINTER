@@ -32,6 +32,7 @@ a {
 }
 
 #counterContainer {
+	position:relative;
 	float:right;
 	width:20%;
 	padding:10px 0px 10px 0px;	
@@ -46,6 +47,52 @@ a {
 }
 
 
+.arrow_box {
+	display:none;
+	position: relative;
+	top:10px;
+	left:-126px;
+	width:300px;
+	height:400px;
+	background: white;
+	border: 1px solid #b7b7b7;
+	z-index:1;
+	padding:5px;
+	border-radius:5px;
+	text-align:center;
+	color:#239b52;
+	font-size:1.1em;
+}
+
+.arrow_box:after, .arrow_box:before {
+	bottom: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(234, 234, 234, 0);
+	border-bottom-color: white;
+	border-width: 8px;
+	left: 50%;
+	margin-left: -8px;
+}
+.arrow_box:before {
+	border-color: rgba(60, 60, 59, 0);
+	border-bottom-color: #b7b7b7;
+	border-width: 9px;
+	left: 50%;
+	margin-left: -9px;
+}
+
+
+
+
+
 /* Basic Styles */
 
 nav {
@@ -57,7 +104,6 @@ nav {
 	position: fixed;
 	top:0px;
 	left:0px;
-	z-index:1000000;
 	margin-top:82px;
 }
 nav ul {

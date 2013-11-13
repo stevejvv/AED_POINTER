@@ -12,7 +12,16 @@
 
 <script src="lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery.flexslider-min.js"></script>
+<script>
+$(function () {
 
+        $('#counterContainer').hover(function() {
+           $('.arrow_box').toggle();
+        });
+
+    });
+
+</script>
 </head>
 <body>
 	<div id="headerContainer">
@@ -21,6 +30,7 @@
 		</div>
 		<div id="counterContainer">
 			<img src="assets/picto_compteur.png" width="59" height="60" alt="Picto Compteur"><span> 716</span>
+		<div class="arrow_box">LAST AED ADDED</div>
 		</div>
 	</div>
 	<nav class="clearfix">
@@ -33,6 +43,8 @@
 		</ul>
 	</nav>
 	<div id="topSpaceContainer"></div>	
+	
+
 	
 	
 		<script>
