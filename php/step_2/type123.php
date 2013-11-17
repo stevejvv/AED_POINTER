@@ -3,8 +3,8 @@ echo '
 	<div id="categoryContainer" >
 	
 	<div style="text-align:center;">
-		<input id="type1" type="radio" name="category" value="cat_1" checked="true"> Category 1 &nbsp;&nbsp;&nbsp;
-		<input id="type4" type="radio" name="category" value="cat_2"> Category 2 &nbsp;&nbsp;&nbsp;<br><br>
+		<input id="type1" type="radio" name="category" value="1"> Category 1 &nbsp;&nbsp;&nbsp;
+		<input id="type4" type="radio" name="category" value="2"> Category 2 &nbsp;&nbsp;&nbsp;<br><br>
 	</div>
 	<div style="width:50%;" class="hint--right" data-hint="Please enter the name of the company">Brand<span>*    </span><input style="float:right;" type="text" name="brand" id="brand"></div>
 	<div style="width:50%;" class="hint--right" data-hint="Please enter the name of the company">Model<span>* </span><input style="float:right;" type="text" name="deaType" id="deaType"></div>
@@ -79,24 +79,24 @@ echo '
 	<div id="fullTimeContainer" style="display:none; text-align:center;">THE AED IS AVAILABLE ALL THE TIME (24/7)
 	</div>
 	<div id="lunchTime" style="padding-top:10px;">Is the AED available during lunch hours?
-		<input type="radio" name="lunchTime" value="0"> Yes &nbsp;
-		<input type="radio" name="lunchTime" value="1" > No &nbsp;
+		<input type="radio" name="lunchTime" value="Yes"> Yes &nbsp;
+		<input type="radio" name="lunchTime" value="No" > No &nbsp;
 	</div>
 	<div id="bankHolidays">Is the AED available during bank holidays?
-		<input type="radio" name="bankHolidays" value="0"> Yes &nbsp;
-		<input type="radio" name="bankHolidays" value="1" > No &nbsp;
+		<input type="radio" name="bankHolidays" value="Yes"> Yes &nbsp;
+		<input type="radio" name="bankHolidays" value="No" > No &nbsp;
 	</div>
 </div>
 <div id="descriptionContainer">
 	<h2>EMPLACEMENT DU DEA: <span>* </span></h2>
 	
-	<textarea  name="description" id="description" form="myform" placeholder="Please specifiy where the AED is located indoors"></textarea>
+	<textarea  name="description" id="description" placeholder="Please specifiy where the AED is located indoors"></textarea>
 </div>
 <div id="confidentialityContainer">
 	<h2>CONFIDENTIALITÉ <span>* </span></h2>
 	<div">Let the AED be accessible to the public :&nbsp;
-	<input type="radio" name="accessibility" value="accessible"> Yes &nbsp;&nbsp;
-	<input type="radio" name="accessibility" value="unaccessible"> No
+	<input type="radio" name="accessibility" value="Yes"> Yes &nbsp;&nbsp;
+	<input type="radio" name="accessibility" value="No"> No
 	</div>
 </div>
 

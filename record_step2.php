@@ -161,7 +161,7 @@ else if ($_POST['type1'] == 3) {
 			<li>Confirmation</li>
 		</ul>
 	</div>
-	<form name="myForm_step2"  action="../AED_POINTER/confirm.php" method="post" enctype="multipart/form-data">
+	<form name="myForm_step2"  action="../AED_POINTER/record_step3.php" method="post" enctype="multipart/form-data">
 		<div id="title_step2">
 			<h1>INFORMATION SUR LE DEA</h1>
 			</div>
@@ -170,16 +170,16 @@ else if ($_POST['type1'] == 3) {
 
 <?php
 if ($_POST['type1'] == 0 or $_POST['type1'] == 1 or $_POST['type1'] == 2) {
-	include 'php/availability_include.php';
+	include 'php/step_2/type123.php';
 }
 else {
-	include 'php/vehicle_include.php';
+	include 'php/step_2/type4.php';
 }
  ?>
 
 
 	<div id="submitConainer">
-	<input type="submit" value="Submit" >		
+	<input type="submit" value="Go to step 3" >		
 	</div>
 	
 	</form>

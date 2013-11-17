@@ -53,7 +53,8 @@ $hthumb = 200;
 ak_img_thumb($target_file, $thumbnail, $wthumb, $hthumb, $fileExt);
 // ------- End Adams Universal Image Thumbnail(Crop) Function -------
 // Display things to the page so you can see what is happening for testing purposes
-echo "The file named <strong>$fileName</strong> uploaded successfuly.<br /><br />";
+
+//echo "The file named <strong>$fileName</strong> uploaded successfuly.<br /><br />";
 
 
 unlink($resized_file);

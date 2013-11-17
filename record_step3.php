@@ -1,7 +1,4 @@
 <?php 
-
-
-
 if ($_POST['type1'] == 0) {
 
 	$type1 = $_POST['type1'];
@@ -44,9 +41,9 @@ if ($_POST['type1'] == 0) {
 	$time13 = $_POST['time13'];
 	$time14 = $_POST['time14'];
 
-	$lunchTime = $_POST['lunchTime'];
+	$lunchTime =    $_POST['lunchTime'];
 	$bankHolidays = $_POST['bankHolidays'];
-	$holidays = $_POST['holidays'];
+	$description =  $_POST['description'];
 
 	$accessibility = $_POST['accessibility'];
 	$uploaded_file = $_POST['uploaded_file'];
@@ -95,70 +92,48 @@ if ($_POST['type1'] == 0) {
 
 		<input type="hidden"  name="lunchTime"     value="'.$lunchTime.'">
 		<input type="hidden"  name="bankHolidays"  value="'.$bankHolidays.'">
-		<input type="hidden"  name="holidays"  	   value="'.$holidays.'">
-
+		
+		<input type="hidden"  name="description"  value="'.$description.'">
 		<input type="hidden"  name="accessibility"  value="'.$accessibility.'">
 		<input type="hidden"  name="uploaded_file"  value="'.$uploaded_file.'">
 	';	
+
+	//Times	
+	include 'php/step_3/confirm_times_custom.php';
 	
 	$visibleOutput = 
 	'
-		<h1>'.$company.'</h1>
-		<h3>'.$name.'</h3>
-		<br />
-		<p><span class="bold">Phone:</span> '.$phone.'</p>
-		<p><span class="bold">Email:</span> '.$email.'</p>
+	<div id="step_3_basic_info_container">
+		<div id="step_3_basic_info_company">'.$company.'</div>
+		<div id="step_3_basic_info_name">'.$name.'</div>
+		<div id="step_3_basic_info_address"></div>
+		<div id="step_3_basic_info_phone"><span>Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>'.$phone.'</div>
+		<div id="step_3_basic_info_email"><span>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>'.$email.'</div>
+		<div id="step_3_basic_info_address"><span>Address:&nbsp; </span>'.$fullAddress.'</div>
+	</div>
 	
-		<p><span class="bold">Address:</span> '.$fullAddress.'</span></p>
-		<br />
+	<div id="step_3_basic_info_description"><span>Description: <br /></span>'.$description.'</div>
 	
+	<div id="step_3_availability_info_container">
+		
+		<div id="step_3_availability_info_title">AVAILABILITY OF THE AED</div>
+		<div id="step_3_availability_info_times">'.$times_output.'</div>
+		<div id="step_3_availability_info_lunch"><span>   Opened during lunch time:&nbsp;&nbsp;&nbsp; </span>'.$lunchTime.'</div>
+		<div id="step_3_availability_info_holidays"><span>Opened during the holidays: </span>'.$bankHolidays.'</div>
+	</div>
+	<div id="step_3_aed_info_container">
+		<div id="step_3_aed_info_title">INFORMATION ON THE AED</div>			
+		<div id="step_3_aed_info_category"><span>AED Category:&nbsp;&nbsp; </span>'.$category.'</div>
+		<div id="step_3_aed_info_brand"><span>   AED Brand:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>'.$brand.'</div>
+		<div id="step_3_aed_info_model"><span>   AED Model:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>'.$deaType.'</div>
+		<div id="step_3_aed_info_serial"><span>  AED Serial No.:&nbsp; </span>'.$serial.'</div>					
+	</div>
+	<div id="step_3_accessibility_info_container">
+		<div id="step_3_accessibility_info_title">ACCESSIBILITY</div>
+		<div id="step_3_accessibility_info_accessibility"><span>Make AED available to the public: </span>'.$accessibility.'</div>
+	</div>
+		';
 	
-		<p><span class="bold">AED Location indoors</span><br />
-			'.$accessibility.'</p>
-		</div>
-
-		 <table border="0">
-			<tr>
-				<th> </th>
-				<th >Opening hours</th>
-				<th >Closing hours</th>
-			</tr>
-			<tr>
-				<td class="bold">Monday</td>
-				<td>'.$time1.'</td>
-				<td>'.$time2.'</td>
-			</tr>
-			<tr>
-				<td class="bold">Tuesday</td>
-				<td>'.$time3.'</td>
-				<td>'.$time4.'</td>
-			</tr>
-			<tr>
-				<td class="bold">Wednesday</td>
-				<td>'.$time5.'</td>
-				<td>'.$time6.'</td>
-			</tr>
-			<tr>
-				<td class="bold">Thursday</td>
-				<td>'.$time7.'</td>
-				<td>'.$time8.'</td>
-			</tr>
-			<tr>
-				<td class="bold">Friday</td>
-				<td>'.$time9.'</td>
-				<td>'.$time10.'</td>
-			</tr>
-			<tr>
-				<td class="bold">Saturday</td>
-				<td>'.$time11.'</td>
-				<td>'.$time12.'</td>
-			</tr>
-			<tr>
-				<td class="bold">Sunday</td>
-				<td>'.$time13.'</td>
-				<td>'.$time14.'</td>
-			</tr>
-		</table>';
 }
 
 
@@ -206,6 +181,7 @@ else if ($_POST['type1'] == 1) {
 	$lunchTime = $_POST['lunchTime'];
 	$bankHolidays = $_POST['bankHolidays'];
 	$holidays = $_POST['holidays'];
+	$description =  $_POST['description'];
 
 	$accessibility = $_POST['accessibility'];
 	$uploaded_file = $_POST['uploaded_file'];
@@ -254,6 +230,7 @@ else if ($_POST['type1'] == 1) {
 		<input type="hidden"  name="lunchTime"     value="'.$lunchTime.'">
 		<input type="hidden"  name="bankHolidays"  value="'.$bankHolidays.'">
 		<input type="hidden"  name="holidays"  	   value="'.$holidays.'">
+		<input type="hidden"  name="description"  value="'.$description.'">
 
 		<input type="hidden"  name="accessibility"  value="'.$accessibility.'">
 		<input type="hidden"  name="uploaded_file"  value="'.$uploaded_file.'">
@@ -306,6 +283,7 @@ else if ($_POST['type1'] == 2) {
 	$lunchTime = $_POST['lunchTime'];
 	$bankHolidays = $_POST['bankHolidays'];
 	$holidays = $_POST['holidays'];
+	$description =  $_POST['description'];
 
 	$accessibility = $_POST['accessibility'];
 	$uploaded_file = $_POST['uploaded_file'];
@@ -355,6 +333,7 @@ else if ($_POST['type1'] == 2) {
 		<input type="hidden"  name="lunchTime"     value="'.$lunchTime.'">
 		<input type="hidden"  name="bankHolidays"  value="'.$bankHolidays.'">
 		<input type="hidden"  name="holidays"  	   value="'.$holidays.'">
+		<input type="hidden"  name="description"  value="'.$description.'">
 
 		<input type="hidden"  name="accessibility"  value="'.$accessibility.'">
 		<input type="hidden"  name="uploaded_file"  value="'.$uploaded_file.'">
@@ -527,15 +506,32 @@ else if ($_POST['type1'] == 3) {
 <html>
 <head>
 	<meta charset="utf-8">
-
 	<title>Confirm</title>
 	<link rel="stylesheet" href="css/css_reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen" title="no title" charset="utf-8">
-
-		
-	
+	<link rel="stylesheet" href="css/form_v3_step1.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css/record_step3.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css/index_main.css" type="text/css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
+	<div id="headerContainer">
+		<div id="logoContainer">
+			<img src="assets/logo.png" width="450" height="62" alt="AED-Pointer Logo">		
+		</div>
+		<div id="counterContainer">
+			<img src="assets/picto_compteur.png" width="59" height="60" alt="Picto Compteur"><span> 716</span>
+		</div>
+	</div>
+	<nav class="clearfix">
+		<ul class="clearfix">
+			<li><a href="#">CARTE</a></li>
+			<li><a href="add_aed.html">AJOUTER UN DEA</a></li>
+			<li><a href="#">LIENS</a></li>
+			<li><a href="#">APPLICATION</a></li>
+			<li><a href="#">EN SAVOIR +</a></li>
+		</ul>
+	</nav>
+	<div id="topSpaceContainer"></div>
 	<div id="msform">
 		<ul id="progressbar">
 			<li class="active">Personal information</li>
@@ -544,16 +540,19 @@ else if ($_POST['type1'] == 3) {
 		</ul>
 	</div>
 	
+	<?php include 'php/step_3/upload_file.php'; ?>
+	
+	<div id="alert_submit"><span>Note</span>: You need to press the validate button at the bottom of the page in order to submit your application</div>
 	<div id="confirmBodyContainer">
-	
-	
-	<?php include 'php/upload_file.php'; ?>
-	<?php echo $hiddenInputs; ?>
-	<input type="hidden"  name="imageDirectory" value="<?php if (isset($thumbnail)) {echo $thumbnail;}?>">
-	<?php echo $visibleOutput; ?>
-	<img src="<?php echo $thumbnail ?>" width="100" height="100">
-</div>	
-<link rel="stylesheet" href="css/form_v3_step1.css" type="text/css" media="screen" title="no title" charset="utf-8">
-
+		<img id="thumbnail" src="<?php echo $thumbnail ?>" >		
+		<?php echo $visibleOutput; ?>	
+	</div>	
+	<form name="myForm" action="" method="post">	
+		<?php echo $hiddenInputs; ?>
+		<input type="hidden"  name="imageDirectory" value="<?php if (isset($thumbnail)) {echo $thumbnail;}?>">
+		<div id="submitContainer">
+			<input id="submitButton" type="submit" value="SUBMIT" >		
+		</div>	
+	</form>
 </body>
 </html>

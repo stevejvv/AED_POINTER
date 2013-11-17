@@ -3,11 +3,44 @@
 #bodyContainer {
 	width:700px;
 	margin:0 auto;
-	margin-top:100px;
+	margin-top:50px;
 }
+#body_inner_container {
+	float:left;
+	padding:20px;
+	background-color:white;
+}
+#body_inner_container span{
+	font-weight:bold;	
+}
+
+
+.arrow {
+	position: relative;
+	display:inline-block;
+	height:50px;
+	width:100%;
+	text-align:center;
+	animation: point-down 1s alternate infinite;	
+}
+
+@keyframes point-down {
+	from {
+		top: 0;	
+	}
+	to {
+		top: 15px;	
+	}
+}
+
+
 #recordContainer {
 	float:left;
 	width:47%;
+}
+#recordContainer a {
+	text-decoration: none;
+	color:white;
 }
 #recordHeader {
 	height:50px;
@@ -23,6 +56,8 @@
 #recordFooter {
 	text-align:justify;
 	padding: 10px;
+	background-color:white;
+	
 	
 }
 #indicateContainer {
@@ -30,12 +65,17 @@
 	width:47%;
 }
 
+#indicateHeader a {
+	text-decoration: none;
+	color:white;
+}
+
 #indicateHeader {
 	height:50px;
 	text-align:center;
 	line-height:50px;
 	background-color:#26729d;
-	
+	color:white;
 	
 }
 
@@ -46,6 +86,7 @@
 #indicateFooter {
 	text-align:justify;
 	padding: 10px;
+	background-color:white;
 	
 	
 }

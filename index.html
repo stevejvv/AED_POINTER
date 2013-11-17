@@ -13,14 +13,20 @@
 <script src="lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery.flexslider-min.js"></script>
 <script>
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide"
+  });
+});
+
+
 $(function () {
 
         $('#counterContainer').hover(function() {
            $('.arrow_box').toggle();
         });
-
-    });
-
+    });	
 </script>
 </head>
 <body>
@@ -30,13 +36,81 @@ $(function () {
 		</div>
 		<div id="counterContainer">
 			<img src="assets/picto_compteur.png" width="59" height="60" alt="Picto Compteur"><span> 716</span>
-		<div class="arrow_box">LAST AED ADDED</div>
+		
+			<div class="arrow_box">
+				
+				<div id="arrow_box_title">LAST AED ADDED</div>
+			
+				<div id="last_added_outer_container">
+				
+					<div class="last_added_container">
+						<div class="pointer_img_opened">
+							<img src="images/pointer.png" width="66" height="75" alt="Pointer">
+							<div class="last_added_container_availability">OPENED
+							</div>
+						</div>	
+						<div class="last_added_container_name">GALERIES ST LAMBERT<br /><br />
+						</div>
+						<div class="last_added_container_address">Place Saint Lambert, 27, 4000  Liège
+						</div>	
+					</div>
+				
+					<div class="last_added_container">
+						<div class="pointer_img_closed">
+							<img src="images/pointer_red.png" width="66" height="75" alt="Pointer">
+							<div class="last_added_container_availability">CLOSED
+							</div>
+						</div>	
+						<div class="last_added_container_name">PROV-LG INSTITUT ERNEST MALVOZ<br /><br />
+						</div>
+						<div class="last_added_container_address">Quai du Barbou, 4, 4000  Liège
+						</div>	
+					</div>
+			
+			
+					<div class="last_added_container">
+						<div class="pointer_img_opened">
+							<img src="images/pointer.png" width="66" height="75" alt="Pointer">
+							<div class="last_added_container_availability">OPENED
+							</div>
+						</div>	
+						<div class="last_added_container_name">PISCINE HUY<br /><br />
+						</div>
+						<div class="last_added_container_address">Avenue Godin-Parnajon, 5, 4500  Huy
+						</div>	
+					</div>
+					
+					<div class="last_added_container">
+						<div class="pointer_img_opened">
+							<img src="images/pointer.png" width="66" height="75" alt="Pointer">
+							<div class="last_added_container_availability">OPENED
+							</div>
+						</div>	
+						<div class="last_added_container_name">CENTRE SPORTIF D'AWANS<br /><br />
+						</div>
+						<div class="last_added_container_address">Rue de l'Eglise 21, 4340  Awans
+						</div>	
+					</div>
+				
+					<div class="last_added_container">
+						<div class="pointer_img_closed">
+							<img src="images/pointer_red.png" width="66" height="75" alt="Pointer">
+							<div class="last_added_container_availability">CLOSED
+							</div>
+						</div>	
+						<div class="last_added_container_name">AGISCA FOOTBALL<br /><br />
+						</div>
+						<div class="last_added_container_address">Avenue de la Porallée, 4920  Aywaille
+						</div>	
+					</div>	
+				</div>		
+			</div>
 		</div>
 	</div>
 	<nav class="clearfix">
 		<ul class="clearfix">
 			<li><a href="#">CARTE</a></li>
-			<li><a href="record.html">AJOUTER UN DEA</a></li>
+			<li><a href="add_aed.html">AJOUTER UN DEA</a></li>
 			<li><a href="#">LIENS</a></li>
 			<li><a href="#">APPLICATION</a></li>
 			<li><a href="#">EN SAVOIR +</a></li>
@@ -44,7 +118,57 @@ $(function () {
 	</nav>
 	<div id="topSpaceContainer"></div>	
 	
+	<!-- Place somewhere in the <body> of your page -->
+	<div class="flexslider">
+	  <ul class="slides">
+	    <li style="position:relative">
+		  <div id="slide1_text"><span>Decouvrez les DEA de votre région!</span><br/><br/>
 
+		Grâce à AED-POINTER, découvrez les emplacements des Défibrillateurs Externes Automatisés sur une carte. Vérifier s'y il y en a prêt de chez vous, de chez vos proches ou encore de votre travail ou des lieux que vous fréquentez… Cela peut sauver des vies !!!
+	      </div>
+			  <img src="images/map background2.png" >
+	     </li>
+	    <li>
+		  <img src="images/intro background3.jpg">
+	    </li>
+	  </ul>
+	</div>
+	<div id="underText">L’ARRÊT CARDIAQUE... NOUS SOMMES TOUS CONCERNÉS ! Chaque année 2500 personnes sont victimes d’un arrêt cardiaque dans l’Eurégio Meuse-Rhin.
+	</div>
+	<ul id="preFooter">
+		<li>
+			<img src="images/logo_interreg&amp;emgency.png">
+		</li>
+		<li><div><span>Quesqu’un DEA ?</span><br /><br />
+				Piet vernatur? Ximus, suntiumenis dia nonse esenihillam volecab ipis reped que officil iquaectem quam qui destem que volorit audit resedi verehendis suntiaes mos verum a imusdam, <br /><br />
+				<a href="#">lire la suite</a>
+			</div>
+		</li>
+		<li>
+			<div>	<span>Qui sommes nous ?</span><br /><br />
+			Piet vernatur? Ximus, suntiumenis dia nonse esenihillam volecab ipis reped que officil iquaectem quam qui destem que volorit audit <br /><br />
+				<a href="#">lire la suite</a>
+			</div>
+		</li>
+		<li>		
+			<div><span>Cliquez "j'aime"</span><br /><br />
+			Soutenez-nous grâce à Facebook<br /><br />
+			<img id="fb"src="images/facebook_like_buton nb.png">
+			</div>
+		</li>
+	</ul>
+	<div id="footer">
+		<ul>
+			<li>RESPONSABILITÉ</li>
+			<li>MENTIONS LÉGALES </li>
+			<li>CONTACT</li>
+		</ul>	
+	</div>
+	
+	
+	
+	
+	
 	
 	
 		<script>
