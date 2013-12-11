@@ -132,18 +132,14 @@ else if ($_POST['type1'] == 3) {
 	<link rel="stylesheet" href="css/index_main.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" href="css/form_v3_step1.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
+	<script src="lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
 		
 	
 </head>
 <body>
-	<div id="headerContainer">
-		<div id="logoContainer">
-			<img src="assets/logo.png" width="450" height="62" alt="AED-Pointer Logo">		
-		</div>
-		<div id="counterContainer">
-			<img src="assets/picto_compteur.png" width="59" height="60" alt="Picto Compteur"><span> 716</span>
-		</div>
-	</div>
+	
+	<?php include 'php/header.php';?>
+	
 	<nav class="clearfix">
 		<ul class="clearfix">
 			<li><a href="#">CARTE</a></li>
@@ -183,8 +179,7 @@ else {
 	</div>
 	
 	</form>
-	
-<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>	
 <script src="lib/picker.js"></script>
 <script src="lib/picker.date.js"></script>
 <script src="lib/picker.time.js"></script>
