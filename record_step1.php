@@ -11,10 +11,15 @@
 	<link rel="stylesheet" href="css/form_v3_step1.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
 	<script src="lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
-
+ 
 </head>
 <body>
+	
+<!--HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER -->	
+
 	<?php include 'php/header.php';?>
+
+<!--NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR -->
 
 	<nav class="clearfix">
 		<ul class="clearfix">
@@ -25,6 +30,9 @@
 			<li><a href="#">EN SAVOIR +</a></li>
 		</ul>
 	</nav>
+
+<!--PROGRESS BAR PROGRESS BAR PROGRESS BAR PROGRESS BAR PROGRESS BAR -->
+
 	<div id="topSpaceContainer"></div>
 	  <div id="msform">
 		<ul id="progressbar">
@@ -33,6 +41,9 @@
 			<li>Confirmation</li>
 		</ul>
 	</div>
+	
+<!--FORM HEADER FORM HEADER FORM HEADER FORM HEADER FORM HEADER FORM HEADER -->
+
 	<div id="titles">
 		<div><h1>GENERAL INFORMATION</h1></div>
 		<div style="display:none"><h1>GENERAL INFORMATION<br /><span>Company</span></h1></div>
@@ -44,7 +55,12 @@
 		<div style="display:none"><h1>GENERAL INFORMATION<br /><span>AMU Ambulance Vehicle</span></h1></div>
 		<div style="display:none"><h1>GENERAL INFORMATION<br /><span>Other Ambulance Vehicle</span></h1></div>
 	</div>
+
+<!--FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM -->
+	
 	<form name="myForm" action="record_step2.php" method="post">
+
+<!--FORM INITIAL TYPES FORM INITIAL TYPES FORM INITIAL TYPES FORM INITIAL TYPES -->	
 		
 		<div id="typeContainer">
 			<div style="text-align:center;">
@@ -54,7 +70,9 @@
 				<input type="radio" name="type1" value="3" onclick="initialType()"> Vehicle &nbsp;&nbsp;
 			</div>
 		</div>
-		
+
+<!--COMPANY COMPANY COMPANY COMPANY COMPANY COMPANY COMPANY COMPANY COMPANY COMPANY -->	
+	
 		<div id="companyContainer" style="display:none;">
 			<div id="basicInfoContainer">
 				
@@ -72,6 +90,9 @@
 				</div>
 			</div>			
 		</div>
+
+<!--PRIVATE PRIVATE PRIVATE PRIVATE PRIVATE PRIVATE PRIVATE PRIVATE PRIVATE PRIVATE -->	
+	
 		<div id="privateContainer" style="display:none;">
 			<div id="basicInfoContainer">
 				<div style="width:60%;" class="hint--right" data-hint="Please enter the name of the contact person">Contact person<span>* </span><input style="float:right;" type="text" name="name1"></div><br>
@@ -90,6 +111,8 @@
 				</div>
 			</div>			
 		</div>		
+
+<!--PUBLIC PLACE PUBLIC PLACE PUBLIC PLACE PUBLIC PLACE PUBLIC PLACE PUBLIC PLACE PUBLIC PLACE -->	
 		
 		<div id="publicContainer" style="display:none;">
 			<div id="basicInfoContainer">
@@ -110,6 +133,8 @@
 				</div>
 			</div>			
 		</div>		
+			
+<!--VEHICLE VEHICLE VEHICLE VEHICLE VEHICLE VEHICLE VEHICLE VEHICLE VEHICLE -->	
 		
 		<div id="vehicleContainer" style="display:none;">
 			<div id="vehicleTypeContainer">
@@ -151,11 +176,9 @@
 		
 		<div id="hiddenOutput"></div>
 		<div id="submitContainer" style="display:none;">
-		<input id="submitButton" type="submit" value="Go to step 2" >		
+			<input id="submitButton" type="submit" value="Go to step 2" >		
 		</div>
 	</form>
-	
-	
 	
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDSMTHUIyndywwgyws3_C34P5LognZxgLc&sensor=false"></script>
 	<script src="js/form_map_v2.js" type="text/javascript" charset="utf-8"></script>

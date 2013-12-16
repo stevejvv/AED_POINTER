@@ -539,17 +539,24 @@ else if ($_POST['type1'] == 3) {
 		</ul>
 	</div>
 	
-	<?php include 'php/step_3/upload_file.php'; ?>
+	<?php 
+	
+	
+	include 'php/file_upload.php'; 
+	
+	?> 
+
 	
 	<div id="alert_submit"><span>Note</span>: You need to press the validate button at the bottom of the page in order to submit your application</div>
 	<div id="confirmBodyContainer">
-		<img id="thumbnail" src="<?php echo $thumbnail ?>" >		
+		<img id="thumbnail" src="results/<?php echo "$image_underscore_name.jpeg" ?>" >		
 		<?php echo $visibleOutput; ?>	
 	</div>	
 	<form name="myForm" action="" method="post">	
 		<?php echo $hiddenInputs; ?>
 		<input type="hidden"  name="imageDirectory" value="<?php if (isset($thumbnail)) {echo $thumbnail;}?>">
 		<div id="submitContainer">
+			
 			<input id="submitButton" type="submit" value="SUBMIT" >		
 		</div>	
 	</form>

@@ -137,8 +137,12 @@ else if ($_POST['type1'] == 3) {
 	
 </head>
 <body>
-	
+
+<!--HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER -->	
+
 	<?php include 'php/header.php';?>
+
+<!--NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR NAVBAR -->
 	
 	<nav class="clearfix">
 		<ul class="clearfix">
@@ -149,6 +153,9 @@ else if ($_POST['type1'] == 3) {
 			<li><a href="#">EN SAVOIR +</a></li>
 		</ul>
 	</nav>
+
+<!--PROGRESS BAR PROGRESS BAR PROGRESS BAR PROGRESS BAR PROGRESS BAR -->
+
 	<div id="topSpaceContainer"></div>
 	<div id="msform">
 		<ul id="progressbar">
@@ -157,6 +164,9 @@ else if ($_POST['type1'] == 3) {
 			<li>Confirmation</li>
 		</ul>
 	</div>
+
+<!--FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM FORM -->
+
 	<form name="myForm_step2"  action="../AED_POINTER/record_step3.php" method="post" enctype="multipart/form-data">
 		<div id="title_step2">
 			<h1>INFORMATION SUR LE DEA</h1>
@@ -175,16 +185,19 @@ else {
 
 
 	<div id="submitConainer">
-	<input type="submit" value="Go to step 3" >		
+		<input type="submit" value="Go to step 3" >		
 	</div>
 	
 	</form>
+	
+	
 <script src="lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>	
 <script src="lib/picker.js"></script>
 <script src="lib/picker.date.js"></script>
 <script src="lib/picker.time.js"></script>
 <script src="lib/main.js"></script>
 <script src="js/form_v3_step2.js" type="text/javascript" charset="utf-8"></script>
+
 <script>
 function readURL(input) {
         if (input.files && input.files[0]) {
