@@ -1,4 +1,8 @@
+#aj_dea_bg {
+	float:left;
 
+	width:100%;
+}
 
 #bodyContainer {
 	width:700px;
@@ -35,28 +39,39 @@
 
 
 #recordContainer {
-	float:left;
-	width:47%;
+	position:fixed;
+	top:200px;
+	right:200px;
+	
 }
 #recordContainer a {
 	text-decoration: none;
 	color:white;
 }
 #recordHeader {
-	height:50px;
+	height:89px;
 	text-align:center;
-	line-height:50px;
-	background-color:#b93f2d;	
+	background-color:#4DB688;
+		overflow:hidden;
 }
 
 #recordHeader:hover {
-	background-color:#dc7e70;	
-	
+	height:150px;
+	animation: big .5s alternate ;
+}
+
+@keyframes big {
+	from {
+		height: 89px;	
+	}
+	to {
+		height: 150px;	
+	}
 }
 #recordFooter {
-	text-align:justify;
+	text-align:center;
 	padding: 10px;
-	background-color:white;
+	background-color:#009755;
 	
 	
 }
