@@ -52,7 +52,7 @@ $(window).load(function() {
 			  <img src="images/map background2.png" >
 	     </li>
 	    <li>
-		  <img src="images/intro background3.jpg">
+		  <img src="images/slide_bg2.jpg">
 	    </li>
 		<li>
 		  <img src="images/intro ajouter dea.jpg">

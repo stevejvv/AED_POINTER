@@ -26,8 +26,17 @@
 		</ul>
 	</nav>
 	<div id="topSpaceContainer"></div>
+		<img id="aj_dea_bg" src="images/aj_dea_bg.jpg">
+		
+		<div id="recordContainer">
+			<a href="record_step1.php" title="form_v2"><div id="recordHeader"><img  src="assets/icon_aj_dea.png" style="margin:5px 0px;"><br />Vous posséder un DEA. Enregistrer le ici !</div></a>
+			<div id="recordFooter">ENREGISTRER VOTRE DEA</div>
+		</div>
 	<div id="bodyContainer">
 		<div id="body_inner_container">
+		
+		
+		
 			<span>Aidez-nous à recenser les DEA de nos régions !</span><br /><br />
 
 			En ajoutant un DEA sur AED-Pointer.eu ou sur l'application AED-POINTER il devient visible sur la carte et accesible pour le public et les services de secours 112.<br /><br />
@@ -35,11 +44,7 @@
 			Tout le monde peut ajouter un DEA, il sera disponilbe sur le site après validation. Choisissez en cliquant sur une des 2 possibilitées suivante  :
 		</div>
 		
-		<div id="recordContainer">
-			<div class="arrow">&#8595;</div>
-			<a href="record_step1.php" title="form_v2"><div id="recordHeader">ENREGISTRER VOTRE DEA</div></a>
-			<div id="recordFooter">Vous posséder un DEA. Enregistrer le ici !</div>
-		</div>
+		
 		<div id="indicateContainer">
 			<div class="arrow">&#8595;</div>
 			<a href="#"><div id="indicateHeader">SIGNALER UN DEA</div></a>
