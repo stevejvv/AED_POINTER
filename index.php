@@ -5,26 +5,30 @@
 	<meta charset="utf-8">
 	<title>AED-Pointer.eu</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<link rel="stylesheet" href="css/css_reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
-<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen" title="no title" charset="utf-8">
-<link rel="stylesheet" href="css/index_main.css" type="text/css" media="screen" title="no title" charset="utf-8">
-<link rel="stylesheet" href="lib/flexslider.css" type="text/css" media="screen" title="no title" charset="utf-8">
-<link rel="icon" type="image/png" href="images/pointer.png">
+	<link rel="icon" type="image/png" href="images/pointer.png">
 
-<script src="lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/jquery.flexslider-min.js"></script>
-<script>
-// Can also be used with $(document).ready()
-$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "slide",
-	slideshowSpeed: 7000,        
-	animationSpeed: 1000,
-	controlNav: false, 
-	direction: "horizontal"
-  });
-});
-</script>
+	<link rel="stylesheet" href="lib/css/css_reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="lib/css/normalize.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="lib/css/flexslider.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	
+	<link rel="stylesheet" href="css/index_main.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+	<script src="lib/js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="lib/js/jquery.flexslider-min.js"></script>
+	
+	<script>
+		// Can also be used with $(document).ready()
+		$(window).load(function() {
+		  $('.flexslider').flexslider({
+		    animation: "slide",
+			slideshowSpeed: 7000,        
+			animationSpeed: 1000,
+			controlNav: false, 
+			direction: "horizontal"
+		  });
+		});
+	</script>
+	
 </head>
 <body>
 	<?php include 'php/header.php';?>
@@ -86,12 +90,6 @@ $(window).load(function() {
 	</ul>
 	<div id="footerSpace"> </div>
 	<div id="footer">
-		<div id="languageContainer">
-			<a href="#"> FR </a> - 
-			<a href="#"> NL </a> - 
-			<a href="#"> DE </a> - 
-			<a href="#"> EN </a>
-		</div>
 		<ul>
 			<li><a href="#">RESPONSABILITÉ</a></li>
 			<li><a href="#">MENTIONS LÉGALES </a></li>

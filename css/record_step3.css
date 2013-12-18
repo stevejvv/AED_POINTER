@@ -1,7 +1,5 @@
 #confirmBodyContainer{
-	height:800px;
-	color:#3c3c3b;
-	
+	height:950px;
 		
 }
 #confirmBodyContainer img{
@@ -13,8 +11,7 @@
 	float:left;
 	width:80%;
 	background-color: white;
-	line-height:1em;
-		
+	line-height:1em;	
 }	
 #step_3_basic_info_company {
 	text-align:center;
@@ -50,7 +47,8 @@
 	padding:10px 10px;
 }
 #step_3_basic_info_description span {
-	font-weight:bold;	
+	font-weight:bold;
+	font-size:1.1em;	
 }
 #step_3_availability_info_container {
 	float:left;
@@ -58,6 +56,34 @@
 	line-height:1em;
 	padding:10px 0px;		
 	
+}
+#step_3_aed_address_container {
+	line-height:1em;
+	
+	float:left;
+	width:100%;
+	height:160px;
+	border-top:thin solid #eaeaea;
+	border-bottom:thin solid #eaeaea;
+	
+	margin-top:10px;
+	padding-top:10px;
+}
+#result_address {
+	float:left;
+	width:50%;
+	height:100px;
+}
+#result_address span {
+	font-size:1.1em;
+	font-weight:bold;
+}
+#result_map {
+	float:left;
+	width:50%;
+}
+#map-canvas {
+	height:150px;
 }
 #step_3_availability_info_title {
 	padding:10px 0px;

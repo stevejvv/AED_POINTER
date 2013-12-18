@@ -1,58 +1,52 @@
 #aj_dea_bg {
-	float:left;
+	position:absolute;
+	top:107px;
+	left:0px;
 
 	width:100%;
+	z-index:-1;
 }
 
 #bodyContainer {
-	width:700px;
-	margin:0 auto;
-	margin-top:50px;
+	width:100%;
+	margin-top:20px;
 }
 #body_inner_container {
-	float:left;
+	float:right;
+	width:65%;
+	text-align:right;
 	padding:20px;
-	background-color:white;
+	
+	
 }
 #body_inner_container span{
-	font-weight:bold;	
-}
-
-
-.arrow {
-	position: relative;
-	display:inline-block;
-	height:50px;
-	width:100%;
-	text-align:center;
-	animation: point-down 1s alternate infinite;	
-}
-
-@keyframes point-down {
-	from {
-		top: 0;	
-	}
-	to {
-		top: 15px;	
-	}
+	font-weight:bold;
+	font-size:1.8em;	
 }
 
 
 #recordContainer {
-	position:fixed;
-	top:200px;
-	right:200px;
+	width:200px;
+	float:right;
+	margin:20px;
 	
 }
+#recordContainer img {
+	
+	
+}
+
 #recordContainer a {
 	text-decoration: none;
 	color:white;
 }
 #recordHeader {
-	height:89px;
+	height:90px;
 	text-align:center;
 	background-color:#4DB688;
-		overflow:hidden;
+	overflow:hidden;
+	color:white;
+	
 }
 
 #recordHeader:hover {
@@ -62,7 +56,7 @@
 
 @keyframes big {
 	from {
-		height: 89px;	
+		height: 90px;	
 	}
 	to {
 		height: 150px;	
@@ -72,12 +66,14 @@
 	text-align:center;
 	padding: 10px;
 	background-color:#009755;
+	color: white;
 	
 	
 }
 #indicateContainer {
+	width:200px;
 	float:right;
-	width:47%;
+	margin:20px;
 }
 
 #indicateHeader a {
@@ -86,22 +82,33 @@
 }
 
 #indicateHeader {
-	height:50px;
+	height:90px;
 	text-align:center;
-	line-height:50px;
-	background-color:#26729d;
+	background-color:#4DB688;
+	overflow:hidden;
 	color:white;
 	
 }
 
 #indicateHeader:hover {
-	background-color:#54a7d5;	
-	
+	height:150px;
+	animation: big2 .5s alternate ;
+}
+
+@keyframes big2 {
+	from {
+		height: 90px;	
+	}
+	to {
+		height: 150px;	
+	}
 }
 #indicateFooter {
-	text-align:justify;
+	text-align:center;
 	padding: 10px;
-	background-color:white;
+	background-color:#009755;
+	color: white;
+	
 	
 	
 }

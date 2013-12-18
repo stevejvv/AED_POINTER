@@ -1,122 +1,4 @@
-<?php 
-
-if ($_POST['type1'] == 0) {
-	
-	$hiddenOutputs = '   
-	<input type="hidden"  name="type1"    value="'.$_POST['type1'].'">
-	
-	<input type="hidden"  name="company"  value="'.$_POST['company0'].'">
-	<input type="hidden"  name="name"     value="'.$_POST['name0'].'">
-	<input type="hidden"  name="phone"    value="'.$_POST['phone0'].'">
-	<input type="hidden"  name="email"    value="'.$_POST['email0'].'">
-	
-	<input type="hidden"  name="fullAddress"  value="'.$_POST['fullAddress'].'">
-	<input type="hidden"  name="country"      value="'.$_POST['country'].'">
-	<input type="hidden"  name="Lat"          value="'.$_POST['Lat'].'">	
-	<input type="hidden"  name="Lng"          value="'.$_POST['Lng'].'">
-	';
-	
-}
-
-else if ($_POST['type1'] == 1) {
-	
-	$hiddenOutputs = '   
-	<input type="hidden"  name="type1"    value="'.$_POST['type1'].'">
-	
-	<input type="hidden"  name="name"     value="'.$_POST['name1'].'">
-	<input type="hidden"  name="phone"    value="'.$_POST['phone1'].'">
-	<input type="hidden"  name="email"    value="'.$_POST['email1'].'">
-	
-	<input type="hidden"  name="fullAddress"  value="'.$_POST['fullAddress'].'">
-	<input type="hidden"  name="country"      value="'.$_POST['country'].'">
-	<input type="hidden"  name="Lat"          value="'.$_POST['Lat'].'">	
-	<input type="hidden"  name="Lng"          value="'.$_POST['Lng'].'">
-	';
-
-}
-
-else if ($_POST['type1'] == 2) {
-	
-	$hiddenOutputs = '   
-	<input type="hidden"  name="type1"    value="'.$_POST['type1'].'">
-	
-	<input type="hidden"  name="company"  value="'.$_POST['company2'].'">
-	<input type="hidden"  name="name"     value="'.$_POST['name2'].'">
-	<input type="hidden"  name="phone"    value="'.$_POST['phone2'].'">
-	<input type="hidden"  name="email"    value="'.$_POST['email2'].'">
-	
-	<input type="hidden"  name="fullAddress"  value="'.$_POST['fullAddress'].'">
-	<input type="hidden"  name="country"      value="'.$_POST['country'].'">
-	<input type="hidden"  name="Lat"          value="'.$_POST['Lat'].'">	
-	<input type="hidden"  name="Lng"          value="'.$_POST['Lng'].'">
-	';
-
-}
-
-else if ($_POST['type1'] == 3) {
-	 
-	if ($_POST['type2'] == 0) {	
-		
-		$output      = "vehicle Private";
-		
-		$hiddenOutputs = '   
-		<input type="hidden"  name="type1"    value="'.$_POST['type1'].'">
-		<input type="hidden"  name="type2"    value="'.$_POST['type2'].'">
-							
-		<input type="hidden"  name="name"     		value="'.$_POST['name3'].'">
-		<input type="hidden"  name="phone"    		value="'.$_POST['phone3'].'">
-		<input type="hidden"  name="email"    		value="'.$_POST['email3'].'">
-		<input type="hidden"  name="LicencePlate"   value="'.$_POST['LicencePlate3'].'">
-		';
-		
-	}
-	else if ($_POST['type2'] == 1) {
-		
-		$hiddenOutputs = '   
-		<input type="hidden"  name="type1"    value="'.$_POST['type1'].'">
-		<input type="hidden"  name="type2"    value="'.$_POST['type2'].'">
-							
-		<input type="hidden"  name="company"  value="'.$_POST['company4'].'">
-		<input type="hidden"  name="name"     value="'.$_POST['name4'].'">
-		<input type="hidden"  name="phone"    value="'.$_POST['phone4'].'">
-		<input type="hidden"  name="email"    value="'.$_POST['email4'].'">
-		<input type="hidden"  name="LicencePlate"  value="'.$_POST['LicencePlate4'].'">
-		';
-		
-		
-	}
-	else if ($_POST['type2'] == 2) {
-		
-		$hiddenOutputs = '   
-		<input type="hidden"  name="type1"    value="'.$_POST['type1'].'">
-		<input type="hidden"  name="type2"    value="'.$_POST['type2'].'">
-							
-		<input type="hidden"  name="company"  value="'.$_POST['company5'].'">
-		<input type="hidden"  name="name"     value="'.$_POST['name5'].'">
-		<input type="hidden"  name="phone"    value="'.$_POST['phone5'].'">
-		<input type="hidden"  name="email"    value="'.$_POST['email5'].'">
-		<input type="hidden"  name="LicencePlate"  value="'.$_POST['LicencePlate5'].'">
-		';
-		
-		
-	}
-	else if ($_POST['type2'] == 3) {	
-		
-		$hiddenOutputs = '   
-		<input type="hidden"  name="type1"    value="'.$_POST['type1'].'">
-		<input type="hidden"  name="type2"    value="'.$_POST['type2'].'">
-							
-		<input type="hidden"  name="company"  		value="'.$_POST['company6'].'">
-		<input type="hidden"  name="name"    	 	value="'.$_POST['name6'].'">
-		<input type="hidden"  name="phone"    		value="'.$_POST['phone6'].'">
-		<input type="hidden"  name="email"    		value="'.$_POST['email6'].'">
-		<input type="hidden"  name="LicencePlate"  value="'.$_POST['LicencePlate6'].'">
-		';	
-	}
-	
-}
-
-?>
+<?php include 'php/step_2/hidden_outputs.php'; ?>
 
 <!DOCTYPE html>
 <html>
@@ -124,16 +6,16 @@ else if ($_POST['type1'] == 3) {
 	<meta charset="utf-8">
 
 	<title>Form v.3 Step 2</title>
-	<link rel="stylesheet" href="css/css_reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
-	<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen" title="no title" charset="utf-8">
-
-	<link rel="stylesheet" href="lib/default.css" id="theme_base">
-	<link rel="stylesheet" href="lib/default.time.css" id="theme_time">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link rel="icon" type="image/png" href="images/pointer.png">
+	
+	<link rel="stylesheet" href="lib/css/css_reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="lib/css/normalize.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="lib/css/default.css" id="theme_base">
+	<link rel="stylesheet" href="lib/css/default.time.css" id="theme_time">
+	
 	<link rel="stylesheet" href="css/index_main.css" type="text/css" media="screen" title="no title" charset="utf-8">
-	<link rel="stylesheet" href="css/form_v3_step1.css" type="text/css" media="screen" title="no title" charset="utf-8">
-
-	<script src="lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
-		
+	<link rel="stylesheet" href="css/record_step1.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	
 </head>
 <body>
@@ -191,29 +73,30 @@ else {
 	</form>
 	
 	
-<script src="lib/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>	
-<script src="lib/picker.js"></script>
-<script src="lib/picker.date.js"></script>
-<script src="lib/picker.time.js"></script>
-<script src="lib/main.js"></script>
+<script src="lib/js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>	
+<script src="lib/js/picker.js"></script>
+<script src="lib/js/picker.date.js"></script>
+<script src="lib/js/picker.time.js"></script>
+<script src="lib/js/main.js"></script>
+
 <script src="js/form_v3_step2.js" type="text/javascript" charset="utf-8"></script>
 
 <script>
-function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
+	//SHOWS IMAGE ON PAGE
 
-            reader.onload = function (e) {
-                $('#blah').attr('src', e.target.result);
-            }
+	function readURL(input) {
+	        if (input.files && input.files[0]) {
+	            var reader = new FileReader();
 
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    $("#imgInp").change(function(){
-        readURL(this);
-    });
+	            reader.onload = function (e) {
+	                $('#blah').attr('src', e.target.result);
+	            }
+	            reader.readAsDataURL(input.files[0]);
+	        }
+	    }
+	    $("#imgInp").change(function(){
+	        readURL(this);
+	    });
 </script>
 
 </body>
