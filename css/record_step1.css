@@ -79,7 +79,7 @@ textarea {
 #submitButton {
 	padding:5px;
 }
-#typeContainer, #basicInfoContainer, #addressContainer, #vehicleTypeContainer, #basicInfoContainer0, #basicInfoContainer1, #basicInfoContainer2, #basicInfoContainer3, #submitContainer, #availability, #categoryContainer, #descriptionContainer,#confidentialityContainer, #fileContainer, #submitConainer, #titles > div, #title_step2,#confirmBodyContainer {
+#typeContainer, #basicInfoContainer, #addressContainer, #vehicleTypeContainer, #basicInfoContainer0, #basicInfoContainer1, #basicInfoContainer2, #basicInfoContainer3, #submitContainer, #availability, #categoryContainer, #descriptionContainer,#confidentialityContainer, #fileContainer, #fileContainer1, #submitConainer, #titles > div, #title_step2,#confirmBodyContainer, #confirmBodyContainer1 {
 	border: thin solid #e5e5e5;
 	padding:15px;
 	width:700px;
@@ -97,7 +97,7 @@ textarea {
 	margin-bottom:10px;
 }
 #customContainer {
-	width:40%;
+	width:50%;
 }
 #mondayContainer, #wednesdayContainer, #fridayContainer, #sundayContainer{
 	border-bottom: thin solid #e8e8e8;

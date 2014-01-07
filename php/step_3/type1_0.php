@@ -46,11 +46,11 @@
 	$description =  $_POST['description'];
 
 	$accessibility = $_POST['accessibility'];
-	$uploaded_file = $_POST['uploaded_file'];
+	$logo_name = $_POST['logo_name'];
 
 	$hiddenInputs = 
 	'
-		<input type="hidden"  name="type1"    value="'.$type1.'">
+		<input type="hidden"  id="hiddenType1" name="type1"    value="'.$type1.'">
 	
 		<input type="hidden"  name="company"  value="'.$company.'">
 		<input type="hidden"  name="name"     value="'.$name.'">
@@ -97,52 +97,13 @@
 		
 		<input type="hidden"  name="description"  value="'.$description.'">
 		<input type="hidden"  name="accessibility"  value="'.$accessibility.'">
-		<input type="hidden"  name="uploaded_file"  value="'.$uploaded_file.'">
+		<input type="hidden"  name="logo_name"  value="'.$logo_name.'">
 	';	
 
 	//Times	
 	include 'php/step_3/confirm_times_custom.php';
 	
-	$visibleOutput = 
-	'
-	<div id="step_3_basic_info_container">
-		<div id="step_3_basic_info_company">'.$company.'</div>
-		<div id="step_3_basic_info_name">'.$name.'</div>
-		<div id="step_3_basic_info_address"></div>
-		<div id="step_3_basic_info_phone"><span>Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>'.$phone.'</div>
-		<div id="step_3_basic_info_email"><span>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>'.$email.'</div>
-		<div id="step_3_basic_info_address"><span>Company\'s Address:&nbsp; </span>'.$homeAddress.'</div>
-	</div>
 	
-	<div id="step_3_aed_address_container">
-		<div id="result_address"><span>Address of the AED</span><br /><br />'.$fullAddress.'<br /><br />Lat: '.$Lat.'<br />Lng: '.$Lng.'</div>
-		<div id="result_map">
-			<div id="map-canvas"></div>
-		</div>
-	</div>
-	
-	
-	<div id="step_3_basic_info_description"><span>Description: <br /></span>'.$description.'</div>
-	
-	<div id="step_3_availability_info_container">
-		
-		<div id="step_3_availability_info_title">AVAILABILITY OF THE AED</div>
-		<div id="step_3_availability_info_times">'.$times_output.'</div>
-		<div id="step_3_availability_info_lunch"><span>   Opened during lunch time:&nbsp;&nbsp;&nbsp; </span>'.$lunchTime.'</div>
-		<div id="step_3_availability_info_holidays"><span>Opened during the holidays: </span>'.$bankHolidays.'</div>
-	</div>
-	<div id="step_3_aed_info_container">
-		<div id="step_3_aed_info_title">INFORMATION ON THE AED</div>			
-		<div id="step_3_aed_info_category"><span>AED Category:&nbsp;&nbsp; </span>'.$category.'</div>
-		<div id="step_3_aed_info_brand"><span>   AED Brand:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>'.$brand.'</div>
-		<div id="step_3_aed_info_model"><span>   AED Model:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>'.$deaType.'</div>
-		<div id="step_3_aed_info_serial"><span>  AED Serial No.:&nbsp; </span>'.$serial.'</div>					
-	</div>
-	<div id="step_3_accessibility_info_container">
-		<div id="step_3_accessibility_info_title">ACCESSIBILITY</div>
-		<div id="step_3_accessibility_info_accessibility"><span>Make AED available to the public: </span>'.$accessibility.'</div>
-	</div>
-		';
 	
 
 ?>

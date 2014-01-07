@@ -2,7 +2,16 @@
 	height:950px;
 		
 }
-#confirmBodyContainer img{
+#confirmBodyContainer1{
+	height:350px;
+		
+}
+#confirmBodyContainer img {
+	float:left;
+	width:20%;
+	background-color: white;	
+}
+#confirmBodyContainer1 img {
 	float:left;
 	width:20%;
 	background-color: white;	
