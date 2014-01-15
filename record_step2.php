@@ -64,9 +64,9 @@
 				<div style="display:inline;" class="hint--top" data-hint="DEA qui ne permet pas de passer en mode manuel. Pour utilisateur non professionnel"><input id="type1" type="radio" name="category" value="1" checked="true"> Categorie 1 &nbsp;&nbsp;&nbsp;</div>
 				<div style="display:inline;" class="hint--top" data-hint="DEA qui permet de passer en mode manuel. Pour utilisateurs professionnels"><input id="type4" type="radio" name="category" value="2"> Categorie 2 &nbsp;&nbsp;&nbsp;</div><br><br>
 			</div>
-			<div style="width:50%;" class="hint--right" data-hint="Veuillez indiquer la marque de votre DEA">Marque<span>*    </span><input style="float:right;" type="text" name="brand" id="brand"></div>
-			<div style="width:50%;" class="hint--right" data-hint="Veuillez indiquer le  modèle de votre DEA">Modèle<span>* </span><input style="float:right;" type="text" name="deaType" id="deaType"></div>
-			<div style="width:50%;" class="hint--right" data-hint="Veuillez indiquer le numero de serie de votre DEA">Numéro de série<span>*   </span><input style="float:right;" type="text" name="serial" id="serial"></div>
+			<div style="width:50%;" class="hint--right" data-hint="Veuillez indiquer la marque de votre DEA">Marque<input style="float:right;" type="text" name="brand" id="brand"></div>
+			<div style="width:50%;" class="hint--right" data-hint="Veuillez indiquer le  modèle de votre DEA">Modèle<input style="float:right;" type="text" name="deaType" id="deaType"></div>
+			<div style="width:50%;" class="hint--right" data-hint="Veuillez indiquer le numero de serie de votre DEA">Numéro de série<input style="float:right;" type="text" name="serial" id="serial"></div>
 		</div>
 
 		<div id="scenario1" style="display:none;">
@@ -75,6 +75,8 @@
 				<div id="timesType">
 					<input type="radio" name="timesType" value="0" onclick="timeType()" checked="true"> Préciser les heures &nbsp;&nbsp;
 					<input type="radio" name="timesType" value="1" onclick="timeType()"> Toujours disponible &nbsp;&nbsp;
+					<input type="radio" name="timesType" value="2" onclick="timeType()"> Disponibilité variable &nbsp;&nbsp;
+					
 				</div>
 				<div id="customContainer">
 					<div id="mondayContainer" >
@@ -134,33 +136,44 @@
 						</div>
 					</div>
 				</div>
-				<div id="fullTimeContainer" style="display:none; text-align:center; color:#fc0d1b">Le DEA est disponible tout le temps (24/7)
+				<div id="fullTimeContainer" style="display:none; text-align:center; color:#fc0d1b; margin:20px 0px;">Le DEA est disponible tout le temps (24/7)
 				</div>
-				<div id="lunchTime" style="padding-top:10px;">Le DEA est-il disponible durant les heures de repas?
-					<input type="radio" name="lunchTime" value="Yes"> Oui &nbsp;
-					<input type="radio" name="lunchTime" value="No" > Non &nbsp;
+				<div id="variableTimeContainer" style="display:none;">
+					<textarea  name="variableTime" id="variableTime" placeholder="Veuillez specifier le plus precisement possible la disponibilité du DEA"></textarea>
 				</div>
-				<div id="bankHolidays">Le DEA est-il disponible durant les jours fériés?
+				<div id="lunchTime" style="padding-top:10px;">Le DEA est-il disponible durant les heures de repas?<span>* </span>
+					<input type="radio" name="lunchTime" value="Yes" onclick="lunchTimeFunc()"> Oui &nbsp;
+					<input type="radio" name="lunchTime" value="No" onclick="lunchTimeFunc()"> Non &nbsp;
+					<div id="lunchInputs" style="display:none;">
+						&nbsp; fermé de &nbsp; <select name="lunchTimeClose"><?php include 'php/step_2/input_select.php'; ?></select>
+						&nbsp; à  &nbsp; <select name="lunchTimeOpen"><?php include 'php/step_2/input_select.php'; ?></select>
+					</div>
+				</div>
+				<div id="bankHolidays">Le DEA est-il disponible durant les jours fériés?<span>* </span>
 					<input type="radio" name="bankHolidays" value="Yes"> Oui &nbsp;
 					<input type="radio" name="bankHolidays" value="No" > Non &nbsp;
 				</div>
+				<div id="bankHolidays">Le DEA est-il disponible durant les vacances scolaires?<span>* </span>
+					<input type="radio" name="schoolHolidays" value="Yes"> Oui &nbsp;
+					<input type="radio" name="schoolHolidays" value="No" > Non &nbsp;
+				</div>
 			</div>
 			<div id="descriptionContainer">
-				<h2>EMPLACEMENT DU DEA: <span>* </span></h2>
+				<h2>LOCALISATION DU DEA: <span>* </span></h2>
 				<textarea  name="description" id="description" placeholder="Décrire avec précision ou se situe le DEA dans votre environnement afin d'y accéder facilement. (mention d'étage, particularité de l'endroit,...)"></textarea>
 			</div>
 		</div>
-
+		
 		<div id="confidentialityContainer">
 			<h2>CONFIDENTIALITÉ <span>* </span></h2>
-			<div>Let the AED be accessible to the public :&nbsp;
-			<input type="radio" name="accessibility" value="accessible"> Yes &nbsp;&nbsp;
-			<input type="radio" name="accessibility" value="unaccessible"> No
+			<div>Publier sur AED-Pointer?&nbsp;
+			<input type="radio" name="accessibility" value="accessible"> Oui &nbsp;&nbsp;
+			<input type="radio" name="accessibility" value="unaccessible"> Non
 			</div>
 		</div>
 		<div id="fileContainer">	
-			<h2>IMAGE<span>* </span></h2>
-			Select a file: <input type="file" name="img">
+			<h2>IMAGE</h2>
+			Selectionnez une image: <input type="file" name="img">
 		</div>
 
 		<div id="submitConainer">

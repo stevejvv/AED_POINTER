@@ -82,6 +82,7 @@ else  {
 			<div id="step_3_availability_info_times"><?php echo $times_output; ?></div>
 			<div id="step_3_availability_info_lunch"><span>   Opened during lunch time:&nbsp;&nbsp;&nbsp; </span><?php echo $lunchTime; ?></div>
 			<div id="step_3_availability_info_holidays"><span>Opened during the holidays: </span><?php echo $bankHolidays; ?></div>
+			<div id="step_3_availability_info_schoolHolidays"><span>Opened during the school holidays: </span><?php echo $schoolHolidays; ?></div>
 		</div>
 		
 		<div id="step_3_aed_info_container">

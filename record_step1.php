@@ -74,11 +74,11 @@
 	
 		<div id="companyContainer" style="display:none;">	
 			<div id="basicInfoContainer">
-				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquer le nom de l'entreprise">Nom de l'entreprise<span>* </span><input style="float:right;" type="text" name="company0"></div>
+				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquer le nom de l'entreprise">Nom de l'entreprise<input style="float:right;" type="text" name="company0"></div>
 				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquer le nom et prénom de la personne de contact">Personne de contact<span>* </span><input style="float:right;" type="text" name="name0"></div><br>
-				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquer le numéro de téléphone de la personne de contact">Téléphone<span>* </span><input style="float:right;" type="text" name="phone0"></div><br>
+				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquer le numéro de téléphone de la personne de contact">Téléphone<input style="float:right;" type="text" name="phone0"></div><br>
 				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquer l'adresse e-mail de la personne de contact">E-mail<span>* </span><input style="float:right;" type="text" name="email0" ></div><br>
-				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquer l'adresse de la personne de contact ou de l'entreprise">Adresse de la personne de contact<span>* </span><input style="float:right;" type="text" name="home_address0" ></div><br>
+				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquer l'adresse de la personne de contact ou de l'entreprise">Adresse de la personne de contact<input style="float:right;" type="text" name="home_address0" ></div><br>
 			</div>	
 			<div id="addressContainer">
 				<div class="hint--top" data-hint="Veuillez indiquer l'adresse complete du lieu ou se trouve le DEA">Address du DEA <span>* </span> <input size="40" type="text" name="address0" id="address"></div>
@@ -102,11 +102,11 @@
 				</div>
 			</div>
 			<div id="basicInfoContainer1" style="display:none;">
-				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquer le nom de l'entreprise">Nom de l'entreprise<span>* </span><input style="float:right;" type="text" name="company1"></div>
+				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquer le nom de l'entreprise">Nom de l'entreprise<input style="float:right;" type="text" name="company1"></div>
 				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquer le nom et prénom de la personne de contact">Personne de contact<span>* </span><input style="float:right;" type="text" name="name1"></div><br>
-				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquer le numéro de téléphone de la personne de contact">Téléphone<span>* </span><input style="float:right;" type="text" name="phone1"></div><br>
+				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquer le numéro de téléphone de la personne de contact">Téléphone<input style="float:right;" type="text" name="phone1"></div><br>
 				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquer l'adresse e-mail de la personne de contact">E-mail<span>* </span><input style="float:right;" type="text" name="email1"></div><br>
-				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquez le numéro de plaque d'immatriculation du vehicule ">Numéro de plaque d'immatriculation<span>* </span><input style="float:right;" type="text" name="licencePlate1"></div><br>
+				<div style="width:60%;" class="hint--right" data-hint="Veuillez indiquez le numéro de plaque d'immatriculation du vehicule ">Numéro de plaque d'immatriculation<input style="float:right;" type="text" name="licencePlate1"></div><br>
 			</div>	
 		</div>
 		

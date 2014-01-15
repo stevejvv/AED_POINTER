@@ -40,9 +40,16 @@
 	$sunday = $_POST['sunday'];
 	$time13 = $_POST['time13'];
 	$time14 = $_POST['time14'];
+	
+	$variableTime = $_POST['variableTime'];
 
 	$lunchTime =    $_POST['lunchTime'];
+	$lunchTimeClose =    $_POST['lunchTimeClose'];
+	$lunchTimeOpen =    $_POST['lunchTimeOpen'];
+	
 	$bankHolidays = $_POST['bankHolidays'];
+	$schoolHolidays = $_POST['schoolHolidays'];
+	
 	$description =  $_POST['description'];
 
 	$accessibility = $_POST['accessibility'];
@@ -91,9 +98,15 @@
 		<input type="hidden"  name="sunday"  	value="'.$sunday.'">
 		<input type="hidden"  name="time13"  	value="'.$time13.'">
 		<input type="hidden"  name="time14"  	value="'.$time14.'">
+		
+		<input type="hidden"  name="variableTime"  	value="'.$variableTime.'">
 
 		<input type="hidden"  name="lunchTime"     value="'.$lunchTime.'">
+		<input type="hidden"  name="lunchTimeClose"     value="'.$lunchTimeClose.'">
+		<input type="hidden"  name="lunchTimeOpen"     value="'.$lunchTimeOpen.'">
+		
 		<input type="hidden"  name="bankHolidays"  value="'.$bankHolidays.'">
+		<input type="hidden"  name="schoolHolidays"  value="'.$schoolHolidays.'">
 		
 		<input type="hidden"  name="description"  value="'.$description.'">
 		<input type="hidden"  name="accessibility"  value="'.$accessibility.'">

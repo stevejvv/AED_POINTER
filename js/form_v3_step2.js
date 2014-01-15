@@ -3,13 +3,23 @@ function timeType() {
 	      
 		document.getElementById('customContainer').style.display = "block";
 		document.getElementById('fullTimeContainer').style.display = "none";
+		document.getElementById('variableTimeContainer').style.display = "none";
+		
 	
 	}
 	if (document.forms.myForm_step2.timesType[1].checked==true) {
 	      
 		document.getElementById('customContainer').style.display = "none";
 		document.getElementById('fullTimeContainer').style.display = "block";
+		document.getElementById('variableTimeContainer').style.display = "none";
 	
+	}
+	if (document.forms.myForm_step2.timesType[2].checked==true) {
+	      
+		document.getElementById('customContainer').style.display = "none";
+		document.getElementById('fullTimeContainer').style.display = "none";
+		document.getElementById('variableTimeContainer').style.display = "block";
+		
 	}
 		
 }
@@ -73,6 +83,16 @@ function daysType() {
 	};
 }
 
+
+function lunchTimeFunc(){
+	if(document.forms.myForm_step2.lunchTime[1].checked==true){
+		document.getElementById('lunchInputs').style.display = "block";
+	}
+	else {
+		document.getElementById('lunchInputs').style.display = "none";
+		
+	}
+}
 
 
 
