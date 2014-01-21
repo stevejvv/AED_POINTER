@@ -94,6 +94,16 @@ function lunchTimeFunc(){
 	}
 }
 
+function accessibleAuPublicFunc(){
+	if(document.forms.myForm_step2.accessibleAuPublic[1].checked==true){
+		document.getElementById('auPublicNon').style.display = "block";
+	}
+	else {
+		document.getElementById('auPublicNon').style.display = "none";
+		
+	}
+}
+
 
 
 

@@ -142,33 +142,40 @@
 					<textarea  name="variableTime" id="variableTime" placeholder="Veuillez specifier le plus precisement possible la disponibilité du DEA"></textarea>
 				</div>
 				<div id="lunchTime" style="padding-top:10px;">Le DEA est-il disponible durant les heures de repas?<span>* </span>
-					<input type="radio" name="lunchTime" value="Yes" onclick="lunchTimeFunc()"> Oui &nbsp;
-					<input type="radio" name="lunchTime" value="No" onclick="lunchTimeFunc()"> Non &nbsp;
+					<input type="radio" name="lunchTime" value="1" onclick="lunchTimeFunc()"> Oui &nbsp;
+					<input type="radio" name="lunchTime" value="0" onclick="lunchTimeFunc()"> Non &nbsp;
 					<div id="lunchInputs" style="display:none;">
 						&nbsp; fermé de &nbsp; <select name="lunchTimeClose"><?php include 'php/step_2/input_select.php'; ?></select>
 						&nbsp; à  &nbsp; <select name="lunchTimeOpen"><?php include 'php/step_2/input_select.php'; ?></select>
 					</div>
 				</div>
 				<div id="bankHolidays">Le DEA est-il disponible durant les jours fériés?<span>* </span>
-					<input type="radio" name="bankHolidays" value="Yes"> Oui &nbsp;
-					<input type="radio" name="bankHolidays" value="No" > Non &nbsp;
+					<input type="radio" name="bankHolidays" value="1"> Oui &nbsp;
+					<input type="radio" name="bankHolidays" value="0" > Non &nbsp;
 				</div>
 				<div id="bankHolidays">Le DEA est-il disponible durant les vacances scolaires?<span>* </span>
-					<input type="radio" name="schoolHolidays" value="Yes"> Oui &nbsp;
-					<input type="radio" name="schoolHolidays" value="No" > Non &nbsp;
+					<input type="radio" name="schoolHolidays" value="1"> Oui &nbsp;
+					<input type="radio" name="schoolHolidays" value="0" > Non &nbsp;
 				</div>
 			</div>
 			<div id="descriptionContainer">
 				<h2>LOCALISATION DU DEA: <span>* </span></h2>
 				<textarea  name="description" id="description" placeholder="Décrire avec précision ou se situe le DEA dans votre environnement afin d'y accéder facilement. (mention d'étage, particularité de l'endroit,...)"></textarea>
 			</div>
+			<div id="auPublic">Le DEA est-il directement accessible au public?<span>* </span>
+				<input type="radio" name="accessibleAuPublic" value="1" onclick="accessibleAuPublicFunc()"> Oui &nbsp;
+				<input type="radio" name="accessibleAuPublic" value="0" onclick="accessibleAuPublicFunc()"> Non &nbsp;
+				<div id="auPublicNon" style="display:none;">
+					<textarea  name="auPublicNonDescription" id="auPublicNonDescription" placeholder="Veuillez préciser de quel manière peut-on accéder au DEA "></textarea>
+				</div>
+			</div>
 		</div>
 		
 		<div id="confidentialityContainer">
 			<h2>CONFIDENTIALITÉ <span>* </span></h2>
 			<div>Publier sur AED-Pointer?&nbsp;
-			<input type="radio" name="accessibility" value="accessible"> Oui &nbsp;&nbsp;
-			<input type="radio" name="accessibility" value="unaccessible"> Non
+			<input type="radio" name="accessibility" value="1"> Oui &nbsp;&nbsp;
+			<input type="radio" name="accessibility" value="0"> Non
 			</div>
 		</div>
 		<div id="fileContainer">	

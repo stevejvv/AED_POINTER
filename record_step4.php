@@ -1,3 +1,82 @@
+<?php
+$type1 = $_POST['type1'];
+
+$company = $_POST['company'];
+$name = $_POST['name'];
+$phone = $_POST['phone'];
+$email = $_POST['email'];
+
+$fullAddress = $_POST['fullAddress'];
+$country = $_POST['country'];
+$Lat = $_POST['Lat'];
+$Lng = $_POST['Lng'];
+
+$homeAddress = $_POST['home_address'];
+
+$category = $_POST['category'];
+$brand = $_POST['brand'];
+$deaType = $_POST['deaType'];
+$serial = $_POST['serial'];
+
+$timesType = $_POST['timesType'];
+$monday = $_POST['monday'];
+$time1 = $_POST['time1'];
+$time2 = $_POST['time2'];
+$tuesday = $_POST['tuesday'];
+$time3 = $_POST['time3'];
+$time4 = $_POST['time4'];
+$wednesday = $_POST['wednesday'];
+$time5 = $_POST['time5'];
+$time6 = $_POST['time6'];
+$thursday = $_POST['thursday'];
+$time7 = $_POST['time7'];
+$time8 = $_POST['time8'];
+$friday = $_POST['friday'];
+$time9 = $_POST['time9'];
+$time10 = $_POST['time10'];
+$saturday = $_POST['saturday'];
+$time11 = $_POST['time11'];
+$time12 = $_POST['time12'];
+$sunday = $_POST['sunday'];
+$time13 = $_POST['time13'];
+$time14 = $_POST['time14'];
+
+$variableTime = $_POST['variableTime'];
+
+$lunchTime =    $_POST['lunchTime'];
+$lunchTimeClose =    $_POST['lunchTimeClose'];
+$lunchTimeOpen =    $_POST['lunchTimeOpen'];
+
+$bankHolidays = $_POST['bankHolidays'];
+$schoolHolidays = $_POST['schoolHolidays'];
+
+$description =  $_POST['description'];
+$accessibleAuPublic =  $_POST['accessibleAuPublic'];
+$auPublicNonDescription =  $_POST['auPublicNonDescription'];
+
+$accessibility = $_POST['accessibility'];
+$logo_name = $_POST['logo_name'];
+
+
+$AED_POINTER = mysql_connect("localhost","root","orion")
+or die (mysql_error());
+
+mysql_select_db("AED_POINTER", $AED_POINTER);
+$sql = "
+INSERT INTO tempDb (name, company,phone,email,address,country,Lat,Lng,time1,time2,time3,time4,time5,time6,time7,time8,time9,time10,time11,time12,time13,time14,description) VALUES ('$name','$company','$phone','$email','$address','$country','$Lat','$Lng','$time1','$time2','$time3','$time4','$time5','$time6','$time7','$time8','$time9','$time10','$time11','$time12','$time13','$time14','$description')
+";
+
+
+
+$result = mysql_query("SELECT * FROM tempDb", $AED_POINTER);
+$num_rows = mysql_num_rows($result);
+
+
+
+mysql_query($sql, $AED_POINTER);	
+	
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +108,7 @@
 		</ul>
 	</nav>
 	<div id="topSpaceContainer"></div>
+	Your registration has been successful. 	<?php echo "Number of rows: ".$num_rows?>;
 	
 	
 </body>

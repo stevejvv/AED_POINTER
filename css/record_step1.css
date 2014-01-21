@@ -79,7 +79,7 @@ textarea {
 #submitButton {
 	padding:5px;
 }
-#typeContainer, #basicInfoContainer, #addressContainer, #vehicleTypeContainer, #basicInfoContainer0, #basicInfoContainer1, #basicInfoContainer2, #basicInfoContainer3, #submitContainer, #availability, #categoryContainer, #descriptionContainer,#confidentialityContainer, #fileContainer, #fileContainer1, #submitConainer, #titles > div, #title_step2,#confirmBodyContainer, #confirmBodyContainer1 {
+#typeContainer, #basicInfoContainer, #addressContainer, #vehicleTypeContainer, #basicInfoContainer0, #basicInfoContainer1, #basicInfoContainer2, #basicInfoContainer3, #submitContainer, #availability, #categoryContainer, #descriptionContainer,#confidentialityContainer, #fileContainer, #fileContainer1, #submitConainer, #titles > div, #title_step2,#confirmBodyContainer, #confirmBodyContainer1, #auPublic {
 	border: thin solid #e5e5e5;
 	padding:15px;
 	width:700px;

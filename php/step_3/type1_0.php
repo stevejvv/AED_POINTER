@@ -51,6 +51,8 @@
 	$schoolHolidays = $_POST['schoolHolidays'];
 	
 	$description =  $_POST['description'];
+	$accessibleAuPublic =  $_POST['accessibleAuPublic'];
+	$auPublicNonDescription =  $_POST['auPublicNonDescription'];
 
 	$accessibility = $_POST['accessibility'];
 	$logo_name = $_POST['logo_name'];
@@ -106,9 +108,11 @@
 		<input type="hidden"  name="lunchTimeOpen"     value="'.$lunchTimeOpen.'">
 		
 		<input type="hidden"  name="bankHolidays"  value="'.$bankHolidays.'">
-		<input type="hidden"  name="schoolHolidays"  value="'.$schoolHolidays.'">
 		
 		<input type="hidden"  name="description"  value="'.$description.'">
+		<input type="hidden"  name="accessibleAuPublic"  value="'.$accessibleAuPublic.'">
+		<input type="hidden"  name="auPublicNonDescription"  value="'.$auPublicNonDescription.'">
+		
 		<input type="hidden"  name="accessibility"  value="'.$accessibility.'">
 		<input type="hidden"  name="logo_name"  value="'.$logo_name.'">
 	';	
