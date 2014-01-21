@@ -91,6 +91,7 @@
 	<div id="footerSpace"> </div>
 	<div id="footer">
 		<ul>
+			<li><a href="admin1.php">ADMIN</a></li>
 			<li><a href="#">RESPONSABILITÉ</a></li>
 			<li><a href="#">MENTIONS LÉGALES </a></li>
 			<li><a href="#">CONTACT </li></a>

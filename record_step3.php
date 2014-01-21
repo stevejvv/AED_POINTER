@@ -133,7 +133,7 @@ else  {
 		<?php echo $hiddenInputs; ?>
 		
 		<!-- TO FIX -->
-		<input type="hidden"  name="image" value="<?php if (isset($fileName)) {echo $image_name;}?>">
+		<input type="hidden"  name="image" value="<?php echo $str2; ?>">
 		
 		<div id="submitContainer">
 			

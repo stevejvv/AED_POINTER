@@ -1,0 +1,158 @@
+
+
+#mainContainer{
+	position:fixed;
+	top:70px;
+	bottom:60px;
+	right:0px;
+	left:335px;
+	border: 2px solid #b7b7b7;	
+	margin:10px;
+	padding:5px;
+	background-color:white;
+	overflow:scroll;
+	
+}
+#submitContainer {
+	position:fixed;
+	height:40px;
+	
+	bottom:0px;
+	right:0px;
+	left:335px;
+	border: 2px solid #b7b7b7;	
+	margin:10px;
+	padding:5px;
+	background-color:white;
+}
+#theSubmitButton {
+	float:left;
+	
+	margin:5px;
+	padding:5px;
+	text-align:center;
+	border: 2px solid #b7b7b7;
+	background:#eaeaea;
+}
+#sideBar{
+	position:fixed;
+	top:70px;
+	bottom:0px;
+	margin:10px;
+	padding:10px;
+	width:304px;
+	border: 2px solid #848484;	
+	overflow:scroll;
+	background:#b7b7b7;	
+	
+}
+.ticketContainer{
+	float:left;
+	width:300px;
+	background:white;
+	margin-bottom:5px;
+	border: 2px solid #848484;
+	
+}
+.ticketContainer:hover{
+	background:#eaeaea;	
+}
+.ticketId{
+	float:left;
+	width:40px;
+	height:40px;
+	margin:5px;
+	line-height:40px;
+	text-align:center;
+	border: thin solid #b7b7b7;
+	background:#eaeaea;	
+}
+.ticketName{
+	float:left;
+	padding:5px;
+	padding-bottom:0px;
+	text-align:center;
+	width:225px;	
+}
+.ticketCompany{
+	float:left;
+	padding:5px;
+	text-align:center;
+	width:225px;	
+}
+
+#ajaxBasicInfo {
+	border: 2px solid #b7b7b7;
+	margin:5px;
+	float:left;
+	width:400px;
+	height:260px;
+	padding:5px;
+	background:#eaeaea;	
+	
+}
+#ajaxAddressInfo {
+	border: 2px solid #b7b7b7;
+	margin:5px;
+	float:left;
+	width:600px;
+	height:260px;
+	padding:5px;
+	background:#eaeaea;
+}
+
+#map-canvas {
+	width:585px;
+	height:205px;
+	float:left;
+	padding:5px;
+}
+#showMap{
+	float:right;
+	border: 2px solid #848484;
+	width:84px;
+	margin:5px;
+	height:29px;
+	line-height:29px;
+	text-align:center;
+}
+#showMap:hover{
+	background:#848484;
+	color:white;
+}
+.label{
+	float:left;
+	margin:5px;
+	width:92px;
+	height:33px;
+	line-height:33px;
+	
+		
+}
+.input{
+	float:right;
+	margin:5px;
+	height:25px;
+}
+.red {
+	border:thin solid red;
+	padding:3px;
+}
+
+#ajaxAedInfo {
+	border: 2px solid #b7b7b7;
+	margin:5px;
+	float:left;
+	width:400px;
+	height:170px;
+	padding:5px;
+	background:#eaeaea;
+}
+
+
+
+
+
+
+
+

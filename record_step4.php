@@ -1,5 +1,10 @@
 <?php
+//ALTER TABLE mytable AUTO_INCREMENT = 1
+
+header ('Content-type: text/html; charset=utf-8');
+
 $type1 = $_POST['type1'];
+$type2 = $_POST['type2'];
 
 $company = $_POST['company'];
 $name = $_POST['name'];
@@ -56,14 +61,19 @@ $auPublicNonDescription =  $_POST['auPublicNonDescription'];
 
 $accessibility = $_POST['accessibility'];
 $logo_name = $_POST['logo_name'];
+$image = $_POST['image'];
+
+
+
 
 
 $AED_POINTER = mysql_connect("localhost","root","orion")
 or die (mysql_error());
 
 mysql_select_db("AED_POINTER", $AED_POINTER);
+mysql_set_charset("utf8");
 $sql = "
-INSERT INTO tempDb (name, company,phone,email,address,country,Lat,Lng,time1,time2,time3,time4,time5,time6,time7,time8,time9,time10,time11,time12,time13,time14,description) VALUES ('$name','$company','$phone','$email','$address','$country','$Lat','$Lng','$time1','$time2','$time3','$time4','$time5','$time6','$time7','$time8','$time9','$time10','$time11','$time12','$time13','$time14','$description')
+INSERT INTO tempDb (type1, type2, company, name, phone, email, fullAddress, country, Lat, Lng, home_address, category, brand, deaType, serial, timesType, monday, time1, time2, tuesday, time3, time4, wednesday, time5,time6, thursday, time7,time8, friday, time9,time10, saturday, time11,time12, sunday, time13,time14, variableTime, lunchTime, lunchTimeClose, lunchTimeOpen, bankHolidays, schoolHolidays, description, accessibleAuPublic, auPublicNonDescription, accessibility, logo_name, image) VALUES ('$type1','$type2', '$company', '$name', '$phone', '$email', '$fullAddress', '$country', '$Lat', '$Lng', '$homeAddress', '$category', '$brand', '$deaType', '$serial', '$timesType', '$monday', '$time1', '$time2', '$tuesday', '$time3', '$time4', '$wednesday', '$time5', '$time6', '$thursday', '$time7','$time8', '$friday', '$time9','$time10', '$saturday', '$time11','$time12', '$sunday', '$time13','$time14', '$variableTime', '$lunchTime', '$lunchTimeClose', '$lunchTimeOpen', '$bankHolidays', '$schoolHolidays', '$description', '$accessibleAuPublic', '$auPublicNonDescription', '$accessibility', '$logo_name', '$image')
 ";
 
 
