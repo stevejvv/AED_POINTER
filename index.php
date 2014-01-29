@@ -36,7 +36,7 @@
 	
 	<nav class="clearfix" style="z-index:0;">
 		<ul class="clearfix">
-			<li><a href="#">CARTE</a></li>
+			<li><a href="findAed.php">CARTE</a></li>
 			<li><a href="add_aed.php">AJOUTER UN DEA</a></li>
 			<li><a href="#">LIENS</a></li>
 			<li><a href="#">APPLICATION</a></li>

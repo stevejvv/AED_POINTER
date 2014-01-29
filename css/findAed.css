@@ -1,0 +1,21 @@
+#controlContainer {
+	border: 2px solid #b7b7b7;	
+	position:fixed;
+	top:112px;
+	left:5px;
+	bottom: 5px;
+	width:250px;
+}
+
+#findMapContainer {
+	border: 2px solid #b7b7b7;	
+	position:fixed;
+	top:112px;
+	left:264px;
+	bottom: 5px;
+	right:5px;
+}
+#map-container1 {
+	width:100%;
+	height:100%;
+}
