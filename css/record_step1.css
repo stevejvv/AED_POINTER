@@ -69,7 +69,7 @@ h1 span{
 
 form span {
 	color:red;
-	font-size:.7em;
+	font-size:1em;
 	vertical-align:top;
 }
 textarea {
@@ -79,7 +79,7 @@ textarea {
 #submitButton {
 	padding:5px;
 }
-#typeContainer, #basicInfoContainer, #addressContainer, #vehicleTypeContainer, #basicInfoContainer0, #basicInfoContainer1, #basicInfoContainer2, #basicInfoContainer3, #submitContainer, #availability, #categoryContainer, #descriptionContainer,#confidentialityContainer, #fileContainer, #fileContainer1, #submitConainer, #titles > div, #title_step2,#confirmBodyContainer, #confirmBodyContainer1, #auPublic {
+#typeContainer, #basicInfoContainer, #addressContainer, #vehicleTypeContainer, #basicInfoContainer0, #basicInfoContainer1, #basicInfoContainer2, #basicInfoContainer3, #submitContainer, #availability, #categoryContainer, #descriptionContainer,#confidentialityContainer, #fileContainer, #fileContainer1, #submitConainer, #titles > div, #title_step2, #auPublic {
 	border: thin solid #e5e5e5;
 	padding:15px;
 	width:700px;

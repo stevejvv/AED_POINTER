@@ -4,9 +4,10 @@ var map;
 var myAddress;
 var address;
 var coords;
+var geom;
 	
 function getMarkerAddress0(location) {
-	inputTextAddress = '133 grande rue, Nancy, France'
+	inputTextAddress = '133 grande rue, Nancy, France';
 	
 	geocoder = new google.maps.Geocoder();
 	var mapOptions = {
@@ -40,11 +41,11 @@ function getMarkerAddress0(location) {
           {
 			coordsLat = results[0].geometry.location.lat();
 			coordsLng = results[0].geometry.location.lng();
-			
+			geom = results[0].geometry.location;
             address = results[0].formatted_address;
 			
 			
-			document.getElementById("addressResult0").innerHTML = "<span>" + address +"</span><br /><br />Latitude: "+ coordsLat + "<br />Longitude: "+ coordsLng;
+			document.getElementById("addressResult0").innerHTML = "<span>" + geom +"</span><br />"+ "<span>" + address +"</span><br /><br />Latitude: "+ coordsLat + "<br />Longitude: "+ coordsLng;
 			
 		
 			var country;
@@ -58,7 +59,7 @@ function getMarkerAddress0(location) {
 			document.getElementById("hiddenOutput").innerHTML = "";
 			
 			document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  name=\"fullAddress\"  value=\""+address+"\">";
-			document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  name=\"country\"  value=\""+country+"\">";
+			document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  id=\"countryCheck\" name=\"country\"  value=\""+country+"\">";
 			document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  id=\"latitudeCheck\" name=\"Lat\" value=\""+coordsLat+"\">";
 			document.getElementById("hiddenOutput").innerHTML += "<input type=\"hidden\"  name=\"Lng\"  value=\""+coordsLng+"\">";
 			}

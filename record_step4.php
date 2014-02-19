@@ -1,5 +1,4 @@
 <?php
-//ALTER TABLE mytable AUTO_INCREMENT = 1
 
 header ('Content-type: text/html; charset=utf-8');
 
@@ -54,6 +53,7 @@ $lunchTimeOpen =    $_POST['lunchTimeOpen'];
 
 $bankHolidays = $_POST['bankHolidays'];
 $schoolHolidays = $_POST['schoolHolidays'];
+$autreInfoDispo = $_POST['autreInfoDispo'];
 
 $description =  $_POST['description'];
 $accessibleAuPublic =  $_POST['accessibleAuPublic'];
@@ -73,13 +73,13 @@ or die (mysql_error());
 mysql_select_db("AED_POINTER", $AED_POINTER);
 mysql_set_charset("utf8");
 $sql = "
-INSERT INTO tempDb (type1, type2, company, name, phone, email, fullAddress, country, Lat, Lng, home_address, category, brand, deaType, serial, timesType, monday, time1, time2, tuesday, time3, time4, wednesday, time5,time6, thursday, time7,time8, friday, time9,time10, saturday, time11,time12, sunday, time13,time14, variableTime, lunchTime, lunchTimeClose, lunchTimeOpen, bankHolidays, schoolHolidays, description, accessibleAuPublic, auPublicNonDescription, accessibility, logo_name, image) VALUES ('$type1','$type2', '$company', '$name', '$phone', '$email', '$fullAddress', '$country', '$Lat', '$Lng', '$homeAddress', '$category', '$brand', '$deaType', '$serial', '$timesType', '$monday', '$time1', '$time2', '$tuesday', '$time3', '$time4', '$wednesday', '$time5', '$time6', '$thursday', '$time7','$time8', '$friday', '$time9','$time10', '$saturday', '$time11','$time12', '$sunday', '$time13','$time14', '$variableTime', '$lunchTime', '$lunchTimeClose', '$lunchTimeOpen', '$bankHolidays', '$schoolHolidays', '$description', '$accessibleAuPublic', '$auPublicNonDescription', '$accessibility', '$logo_name', '$image')
+INSERT INTO tempDb (type1, type2, company, name, phone, email, fullAddress, country, Lat, Lng, home_address, category, brand, deaType, serial, timesType, monday, time1, time2, tuesday, time3, time4, wednesday, time5,time6, thursday, time7,time8, friday, time9,time10, saturday, time11,time12, sunday, time13,time14, variableTime, lunchTime, lunchTimeClose, lunchTimeOpen, bankHolidays, schoolHolidays,autreInfoDispo, description, accessibleAuPublic, auPublicNonDescription, accessibility, logo_name, image) VALUES ('$type1','$type2', '$company', '$name', '$phone', '$email', '$fullAddress', '$country', '$Lat', '$Lng', '$homeAddress', '$category', '$brand', '$deaType', '$serial', '$timesType', '$monday', '$time1', '$time2', '$tuesday', '$time3', '$time4', '$wednesday', '$time5', '$time6', '$thursday', '$time7','$time8', '$friday', '$time9','$time10', '$saturday', '$time11','$time12', '$sunday', '$time13','$time14', '$variableTime', '$lunchTime', '$lunchTimeClose', '$lunchTimeOpen', '$bankHolidays', '$schoolHolidays','$autreInfoDispo', '$description', '$accessibleAuPublic', '$auPublicNonDescription', '$accessibility', '$logo_name', '$image')
 ";
 
 
 
-$result = mysql_query("SELECT * FROM tempDb", $AED_POINTER);
-$num_rows = mysql_num_rows($result);
+//$result = mysql_query("SELECT * FROM tempDb", $AED_POINTER);
+//$num_rows = mysql_num_rows($result);
 
 
 
@@ -100,7 +100,7 @@ mysql_query($sql, $AED_POINTER);
 	
 	<link rel="stylesheet" href="css/index_main.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" href="css/record_step1.css" type="text/css" media="screen" title="no title" charset="utf-8">
-	<link rel="stylesheet" href="css/record_step3.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css/record_step4.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
 	<script src="lib/js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
 
@@ -110,16 +110,16 @@ mysql_query($sql, $AED_POINTER);
 	
 	<nav class="clearfix">
 		<ul class="clearfix">
-			<li><a href="#">CARTE</a></li>
-			<li><a href="add_aed.html">AJOUTER UN DEA</a></li>
-			<li><a href="#">LIENS</a></li>
-			<li><a href="#">APPLICATION</a></li>
-			<li><a href="#">EN SAVOIR +</a></li>
+			
 		</ul>
 	</nav>
 	<div id="topSpaceContainer"></div>
-	Your registration has been successful. 	<?php echo "Number of rows: ".$num_rows?>;
-	
+	<div id="centerBox">
+		<div id="thanks">Merci pour cet enregistrement</div>
+		<div id="confirmed">Après validation votre DEA pourra être pris en compte</div>
+		
+		<div id="backToIndex"><a href="index.php">Page d'accueil</a></div>
+	</div>
 	
 </body>
 </html>

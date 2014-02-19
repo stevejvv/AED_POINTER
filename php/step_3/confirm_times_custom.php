@@ -1,10 +1,10 @@
 <?php 
 //custom Times
-if ($timesType == 0) {
+if ($timesType == 1) {
 	if ($monday == "on"){
 		$monday_echo = '	
 		<tr>
-			<td class="bold">Monday</td>
+			<td class="bold">Lundi</td>
 			<td>'.$time1.'</td>
 			<td>'.$time2.'</td>
 		</tr>';	
@@ -12,14 +12,14 @@ if ($timesType == 0) {
 	else {
 		$monday_echo = '	
 			<tr>
-				<td class="bold">Monday</td>
-				<td colspan ="2">Closed</td>
+				<td class="bold">Lundi</td>
+				<td colspan ="2">Fermé</td>
 			</tr>';
 	}
 	if ($tuesday == "on"){
 	$tuesday_echo = '	
 		<tr>
-			<td class="bold">Tuesday</td>
+			<td class="bold">Mardi</td>
 			<td>'.$time3.'</td>
 			<td>'.$time4.'</td>
 		</tr>';	
@@ -27,14 +27,14 @@ if ($timesType == 0) {
 	else {
 	$tuesday_echo =  '	
 			<tr>
-				<td class="bold">Tuesday</td>
-				<td colspan ="2">Closed</td>
+				<td class="bold">Mardi</td>
+				<td colspan ="2">Fermé</td>
 			</tr>';
 	}
 	if ($wednesday == "on"){
 	$wednesday_echo =  '	
 		<tr>
-			<td class="bold">Wednesday</td>
+			<td class="bold">Mercredi</td>
 			<td>'.$time5.'</td>
 			<td>'.$time6.'</td>
 		</tr>'	;
@@ -42,14 +42,14 @@ if ($timesType == 0) {
 	else {
 		$wednesday_echo =  '	
 		<tr>
-			<td class="bold">Wednesday</td>
-			<td colspan ="2">Closed</td>
+			<td class="bold">Mercredi</td>
+			<td colspan ="2">Fermé</td>
 		</tr>';
 	}
 	if ($thursday == "on"){
 	$thursday_echo =  '	
 		<tr>
-			<td class="bold">Thursday</td>
+			<td class="bold">Jeudi</td>
 			<td>'.$time7.'</td>
 			<td>'.$time8.'</td>
 		</tr>';	
@@ -57,14 +57,14 @@ if ($timesType == 0) {
 	else {
 		$thursday_echo =  '	
 		<tr>
-			<td class="bold">Thursday</td>
-			<td colspan ="2">Closed</td>
+			<td class="bold">Jeudi</td>
+			<td colspan ="2">Fermé</td>
 		</tr>';
 	}
 	if ($friday == "on"){
 	$friday_echo =  '	
 		<tr>
-			<td class="bold">Friday</td>
+			<td class="bold">Vendredi</td>
 			<td>'.$time9.'</td>
 			<td>'.$time10.'</td>
 		</tr>';	
@@ -72,14 +72,14 @@ if ($timesType == 0) {
 	else {
 		$friday_echo =  '	
 		<tr>
-			<td class="bold">Friday</td>
-			<td colspan ="2">Closed</td>
+			<td class="bold">Vendredi</td>
+			<td colspan ="2">Fermé</td>
 		</tr>';
 	}
 	if ($saturday == "on"){
 	$saturday_echo =  '	
 		<tr>
-			<td class="bold">Saturday</td>
+			<td class="bold">Samedi</td>
 			<td>'.$time11.'</td>
 			<td>'.$time12.'</td>
 		</tr>';	
@@ -87,14 +87,14 @@ if ($timesType == 0) {
 	else {
 		$saturday_echo =  '	
 		<tr>
-			<td class="bold">Saturday</td>
-			<td colspan ="2">Closed</td>
+			<td class="bold">Samedi</td>
+			<td colspan ="2">Fermé</td>
 		</tr>';
 	}
 	if ($sunday == "on"){
 	$sunday_echo =  '	
 		<tr>
-			<td class="bold">Sunday</td>
+			<td class="bold">Dimanche</td>
 			<td>'.$time13.'</td>
 			<td>'.$time14.'</td>
 		</tr>';	
@@ -102,8 +102,8 @@ if ($timesType == 0) {
 	else {
 		$sunday_echo =  '	
 		<tr>
-			<td class="bold">Sunday</td>
-			<td colspan ="2">Closed</td>
+			<td class="bold">Dimanche</td>
+			<td colspan ="2">Fermé</td>
 		</tr>';
 	}
 
@@ -111,8 +111,8 @@ if ($timesType == 0) {
 		'<table border="0">
 			<tr>
 				<th> </th>
-				<th >Opening hours</th>
-				<th >Closing hours</th>
+				<th >Heure d\'ouverture</th>
+				<th >Heure de fermeture</th>
 			</tr>
 			'
 			.$monday_echo.
@@ -123,11 +123,14 @@ if ($timesType == 0) {
 			$saturday_echo.
 			$sunday_echo.
 			'
-			</table>';		
+			</table><br /><br />';		
 }
 //24/7
+else if($timesType == 0){
+	$times_output = '<span style="color:red; line-height:2em; "> Le DEA est disponible tout le temps</span><br /><br />';	
+}
 else {
-	$times_output = 'The AED is available all the time';	
+	$times_output = '<div class="step_3_items"><span> Disponibilité variable: </span>'.$variableTime.'</div>';
 }
 
 

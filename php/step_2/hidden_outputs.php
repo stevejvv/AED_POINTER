@@ -1,4 +1,5 @@
 <?php
+//error_reporting(0);
 
 if ($_POST['type1'] == 0 or $_POST['type1'] == 1 or $_POST['type1'] == 2) {
 	
@@ -21,7 +22,7 @@ else  {
 		$output      = "vehicle Private";
 		
 		$hiddenOutputs = '   
-		<input type="hidden"  name="type1"    value="'.$_POST['type1'].'">
+		<input type="hidden"  id="hiddenType1" name="type1"    value="'.$_POST['type1'].'">
 		<input type="hidden"  name="type2"    value="'.$_POST['type2'].'">
 		
 		<input type="hidden"  name="company"  value="'.$_POST['company1'].'">					
@@ -29,6 +30,11 @@ else  {
 		<input type="hidden"  name="phone"    		value="'.$_POST['phone1'].'">
 		<input type="hidden"  name="email"    		value="'.$_POST['email1'].'">
 		<input type="hidden"  name="licencePlate"   value="'.$_POST['licencePlate1'].'">
+		
+		<input type="hidden"  name="fullAddress"  value="'.$_POST['fullAddress'].'">
+		<input type="hidden"  name="country"      value="'.$_POST['country'].'">
+		<input type="hidden"  name="Lat"          value="'.$_POST['Lat'].'">	
+		<input type="hidden"  name="Lng"          value="'.$_POST['Lng'].'">
 		';	
 }
 

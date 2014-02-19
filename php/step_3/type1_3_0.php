@@ -7,6 +7,11 @@
 	$phone = $_POST['phone'];
 	$email = $_POST['email'];
 	$licencePlate = $_POST['licencePlate'];
+	
+	$fullAddress = $_POST['fullAddress'];
+	$country = $_POST['country'];
+	$Lat = $_POST['Lat'];
+	$Lng = $_POST['Lng'];
 
 	$category = $_POST['category'];
 	$brand = $_POST['brand'];
@@ -15,6 +20,11 @@
 	
 	$accessibility = $_POST['accessibility'];
 	$logo_name = $_POST['logo_name'];
+	
+	//REMOVE SLASHES
+	
+	$fullAddress = stripslashes($fullAddress);
+	$fullAddress = stripslashes($fullAddress);
 	
 	$hiddenInputs = 
 	'
@@ -33,5 +43,20 @@
 		<input type="hidden"  name="serial"    value="'.$serial.'">
 		
 		<input type="hidden"  name="accessibility"  value="'.$accessibility.'">
-		<input type="hidden"  name="logo_name"  value="'.$logo_name.'">	';
+		<input type="hidden"  name="logo_name"  value="'.$logo_name.'">	
+		
+		<input type="hidden"  name="fullAddress" id="fullAddress" value="'.$fullAddress.'">
+		<input type="hidden"  name="country"      value="'.$country.'">
+		<input type="hidden"  id="hiddenLat" name="Lat"          value="'.$Lat.'">	
+		<input type="hidden"  id="hiddenLng" name="Lng"          value="'.$Lng.'">
+		';
+		
+		//VISIBLE AU PUBLIC
+		$accessibilityString;
+		if($accessibility == 1){
+			$accessibilityString = 'Oui';
+		}
+		else {
+			$accessibilityString = 'Non';
+		}
 ?>

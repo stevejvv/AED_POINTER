@@ -56,11 +56,11 @@ $moveResult = move_uploaded_file($fileTmpLoc, "uploads/$image_name");
 
    // resize
    // and if there is an error, show the error message
-   if (!$image->resize(400, 400, ZEBRA_IMAGE_BOXED, -1)) show_error($image->error, $image->source_path, $image->target_path);
+   if (!$image->resize(400, 400, ZEBRA_IMAGE_BOXED, -1));
 
 	$hidden_logo = '<input type="hidden"  name="logo_name" value="'.$theName.'">';
    
-	unlink("uploads/$image_name");
+	//unlink("uploads/$image_name");
 	
 	
 	

@@ -22,18 +22,13 @@ a {
 	width:100%;
 	background-color:#eaeaea;	
 }
-#logoLeftSpace {
-	float:left;
-	width:7%;
-	height:82px;	
-	
-}
 #logoContainer {
-	float:left;
-	width:68%;
+	text-align:center;
+	width:100%;
 	padding:10px 0px 10px 0px;	
-	text-align:left;
 }
+
+
 
 #counterContainer {
 	position:relative;
@@ -145,6 +140,7 @@ nav {
 	top:0px;
 	left:0px;
 	margin-top:82px;
+	z-index:1000;
 }
 nav ul {
 	padding: 0;

@@ -49,6 +49,7 @@
 	
 	$bankHolidays = $_POST['bankHolidays'];
 	$schoolHolidays = $_POST['schoolHolidays'];
+	$autreInfoDispo = $_POST['autreInfoDispo'];
 	
 	$description =  $_POST['description'];
 	$accessibleAuPublic =  $_POST['accessibleAuPublic'];
@@ -57,19 +58,36 @@
 	$accessibility = $_POST['accessibility'];
 	$logo_name = $_POST['logo_name'];
 
+	//REMOVE SLASHES
+	
+	$fullAddress = stripslashes($fullAddress);
+	$fullAddress = stripslashes($fullAddress);
+	
+	$description = stripslashes($description);
+	$description = stripslashes($description);
+	
+	$auPublicNonDescription = stripslashes($auPublicNonDescription);
+	$auPublicNonDescription = stripslashes($auPublicNonDescription);
+	
+	$variableTime = stripslashes($variableTime);
+	$variableTime = stripslashes($variableTime);
+	
+	$autreInfoDispo = stripslashes($autreInfoDispo);
+	$autreInfoDispo = stripslashes($autreInfoDispo);
+	
 	$hiddenInputs = 
 	'
 		<input type="hidden"  id="hiddenType1" name="type1"    value="'.$type1.'">
 	
 		<input type="hidden"  name="company"  value="'.$company.'">
-		<input type="hidden"  name="name"     value="'.$name.'">
+		<input type="hidden"  id="hiddenName" name="name"     value="'.$name.'">
 		<input type="hidden"  name="phone"    value="'.$phone.'">
-		<input type="hidden"  name="email"    value="'.$email.'">
+		<input type="hidden"  id="hiddenEmail" name="email"    value="'.$email.'">
 	
 		<input type="hidden"  name="fullAddress" id="fullAddress" value="'.$fullAddress.'">
 		<input type="hidden"  name="country"      value="'.$country.'">
-		<input type="hidden"  name="Lat"          value="'.$Lat.'">	
-		<input type="hidden"  name="Lng"          value="'.$Lng.'">
+		<input type="hidden"  id="hiddenLat" name="Lat"          value="'.$Lat.'">	
+		<input type="hidden"  id="hiddenLng" name="Lng"          value="'.$Lng.'">
 		
 		<input type="hidden"  name="home_address" value="'.$homeAddress.'">
 	
@@ -108,6 +126,8 @@
 		<input type="hidden"  name="lunchTimeOpen"     value="'.$lunchTimeOpen.'">
 		
 		<input type="hidden"  name="bankHolidays"  value="'.$bankHolidays.'">
+		<input type="hidden"  name="schoolHolidays"  value="'.$schoolHolidays.'">
+		<input type="hidden"  name="autreInfoDispo"  value="'.$autreInfoDispo.'">
 		
 		<input type="hidden"  name="description"  value="'.$description.'">
 		<input type="hidden"  name="accessibleAuPublic"  value="'.$accessibleAuPublic.'">
@@ -116,6 +136,51 @@
 		<input type="hidden"  name="accessibility"  value="'.$accessibility.'">
 		<input type="hidden"  name="logo_name"  value="'.$logo_name.'">
 	';	
+
+	//LUNCHTIME
+	$lunchTimeString;
+	if($lunchTime == 1){
+		$lunchTimeString = 'Disponible';
+	}
+	else {
+		$lunchTimeString = 'Non disponible de '.$lunchTimeClose.' à '.$lunchTimeOpen;
+	}
+	//BANK HOLIDAYS
+	$bankHolidaysString;
+	if($bankHolidays == 1){
+		$bankHolidaysString = 'Disponible';
+	}
+	else {
+		$bankHolidaysString = 'Non disponible';
+	}
+	//SCHOOL HOLIDAYS
+	$schoolHolidaysString;
+	if($schoolHolidays == 1){
+		$schoolHolidaysString = 'Disponible';
+	}
+	else {
+		$schoolHolidaysString = 'non Disponible';
+	}
+
+	//VISIBLE AU PUBLIC
+	$accessibilityString;
+	if($accessibility == 1){
+		$accessibilityString = 'Oui';
+	}
+	else {
+		$accessibilityString = 'Non';
+	}
+	//ACCESSIBLE AU PUBLIC
+	$accessibleAuPublicString;
+	if($accessibleAuPublic == 1){
+		$accessibleAuPublicString = 'Accessible';
+	}
+	else {
+		$accessibleAuPublicString = $auPublicNonDescription;
+	}
+
+
+
 
 	//Times	
 	include 'php/step_3/confirm_times_custom.php';

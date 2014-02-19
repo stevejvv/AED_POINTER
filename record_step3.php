@@ -1,4 +1,6 @@
 <?php 
+error_reporting(E_ALL);
+
 if ($_POST['type1'] == 0 or $_POST['type1'] == 1 or $_POST['type1'] == 2) {
 	include 'php/step_3/type1_0.php';
 }
@@ -32,70 +34,79 @@ else  {
 	
 	<nav class="clearfix">
 		<ul class="clearfix">
-			<li><a href="#">CARTE</a></li>
-			<li><a href="add_aed.html">AJOUTER UN DEA</a></li>
-			<li><a href="#">LIENS</a></li>
-			<li><a href="#">APPLICATION</a></li>
-			<li><a href="#">EN SAVOIR +</a></li>
+			
 		</ul>
 	</nav>
 	<div id="topSpaceContainer"></div>
 	<div id="msform">
 		<ul id="progressbar">
-			<li class="active">Personal information</li>
-			<li class="active">information on the AED</li>
-			<li class="active">Confirmation</li>
+			<li class="active">Informations générales</li>
+			<li class="active">Informations sur le DEA</li>
+			<li class="active">Validation</li>
 		</ul>
 	</div>
 	
 	<?php include 'php/step_3/file_upload.php'; ?> 
 
 	
-	<div id="alert_submit"><span>Note</span>: You need to press the validate button at the bottom of the page in order to submit your application
+	<div id="alert_submit"><span>Note</span>: Vous devez appuyer sur le bouton de validation en bas de la page afin de soumettre votre formulaire
 	</div>
-	
+<div id="theBigContainer">
 	<div id="confirmBodyContainer" style="display:none">
-		<img id="thumbnail" src="image_database/<?php echo "$image_underscore_name.jpg" ?>" >		
+		<div class="sectionTitle">INFORMATION DE CONTACT</div>
+		<img id="thumbnail" src="image_database/<?php echo $logo_name ?>" >		
 		
 		<div id="step_3_basic_info_container">
-			<div id="step_3_basic_info_company"><?php echo $company; ?></div>
-			<div id="step_3_basic_info_name"><?php echo $name; ?></div>
-			<div id="step_3_basic_info_phone"><span>Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><?php echo $phone; ?></div>
-			<div id="step_3_basic_info_email"><span>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><?php echo $email; ?></div>
-			<div id="step_3_basic_info_address"><span>Address:&nbsp; </span><?php echo $homeAddress; ?></div>
+			<div id="companyVisible" class="step_3_items"><span>Entreprise: </span><?php echo $company; ?></div>
+			<div class="step_3_items"><span>Personne de contact: </span><?php echo $name; ?></div>
+			<div class="step_3_items"><span>Téléphone: </span><?php echo $phone; ?></div>
+			<div class="step_3_items"><span>E-mail: </span><?php echo $email; ?></div>
+			<div class="step_3_items"><span>Adresse: </span><?php echo $homeAddress; ?></div>
 		</div>
 
-		<div id="step_3_aed_address_container">
-			<div id="result_address"><br /><span>Address of the AED</span><br /><br /><?php echo $fullAddress; ?><br /><br />Lat: <?php echo $Lat; ?><br />Lng: <?php echo $Lng; ?></div>
-			<div id="result_map">
+		<div class="sectionContainers">
+			<div class="sectionTitle">ADRESSE DU DEA</div>
+			<div style="float:left; width:100%;">
+				<div class="step_3_items_left"><?php echo $fullAddress; ?></div>
+				<div class="step_3_items_right"><span>Lat: </span> <span id="theLat"><?php echo $Lat; ?></span></div>
+				<div class="step_3_items_right"><span>Lng: </span><span  id="theLng"><?php echo $Lng; ?></span></div>
+				<div class="step_3_boxedItem"><div class="infoSign">i</div> Vous pouvez déplacer le pointeur sur la carte si il n'est pas placé correctement </div>
+			</div>
+			<div class="result_map">
 				<div id="map-canvas"></div>
 			</div>
 		</div>
 
 
-		<div id="step_3_basic_info_description">
-			<span>Description: <br /></span><?php echo $description; ?>
+		<div class="sectionContainers">
+			<div class="sectionTitle">DESCRIPTION</div>
+			<div style="float:left; width:55%;">
+				<div class="step_3_items"><span>Description de la localisation du DEA: </span><?php echo $description; ?></div>
+				<div class="step_3_items"><span>Accessibilité au public: </span><?php echo $accessibleAuPublicString; ?></div>
+			</div>
+			<img id="thumbnail2" src="image_database/<?php echo $str2; ?>" >	
 		</div>
 		
-		<div id="step_3_availability_info_container">
-			<div id="step_3_availability_info_title">AVAILABILITY OF THE AED</div>
+		<div class="sectionContainers">
+			<div class="sectionTitle">DISPONIBILITÉ DU DEA</div>
 			<div id="step_3_availability_info_times"><?php echo $times_output; ?></div>
-			<div id="step_3_availability_info_lunch"><span>   Opened during lunch time:&nbsp;&nbsp;&nbsp; </span><?php echo $lunchTime; ?></div>
-			<div id="step_3_availability_info_holidays"><span>Opened during the holidays: </span><?php echo $bankHolidays; ?></div>
-			<div id="step_3_availability_info_schoolHolidays"><span>Opened during the school holidays: </span><?php echo $schoolHolidays; ?></div>
+			<div class="step_3_items"><span>   Temps de midi: </span><?php echo $lunchTimeString; ?></div>
+			<div class="step_3_items"><span>Jours fériés: </span><?php echo $bankHolidaysString; ?></div>
+			<div class="step_3_items"><span>Vacances scolaires: </span><?php echo $schoolHolidaysString; ?></div>
+			<div class="step_3_items"><span>Autres Informations: </span><?php echo $autreInfoDispo; ?></div>
 		</div>
 		
-		<div id="step_3_aed_info_container">
-			<div id="step_3_aed_info_title">INFORMATION ON THE AED</div>			
-			<div id="step_3_aed_info_category"><span>AED Category:&nbsp;&nbsp; </span><?php echo $category; ?></div>
-			<div id="step_3_aed_info_brand"><span>   AED Brand:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><?php echo $brand; ?></div>
-			<div id="step_3_aed_info_model"><span>   AED Model:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><?php echo $deaType; ?></div>
-			<div id="step_3_aed_info_serial"><span>  AED Serial No.:&nbsp; </span><?php echo $serial; ?></div>					
+		<div class="sectionContainers">
+			<div class="sectionTitle">INFORMATIONS SUR LE DEA</div>	
+			<div class="step_3_items"><span> Catégorie: </span><?php echo $category; ?></div>
+			<div class="step_3_items"><span> Marque: </span><?php echo $brand; ?></div>
+			<div class="step_3_items"><span> Modèle: </span><?php echo $deaType; ?></div>
+			<div class="step_3_items"><span> No. de série: </span><?php echo $serial; ?></div>					
 		</div>
 		
-		<div id="step_3_accessibility_info_container">
-			<div id="step_3_accessibility_info_title">ACCESSIBILITY</div>
-			<div id="step_3_accessibility_info_accessibility"><span>Make AED available to the public: </span><?php echo $accessibility; ?></div>
+		<div class="sectionContainers">
+			<div class="sectionTitle">CONFIDENTIALITÉ</div>
+			<div class="step_3_items"><span>Publier sur AED-Pointer: </span><?php echo $accessibilityString; ?></div>
 		</div>
 	</div>
 	
@@ -103,45 +114,60 @@ else  {
 	
 	
 	<div id="confirmBodyContainer1" style="display:none">
-		<img id="thumbnail" src="image_database/<?php echo "$image_underscore_name.jpg" ?>" >	
+		<div class="sectionTitle">INFORMATION DE CONTACT</div>
+		<img id="thumbnail" src="image_database/<?php echo $logo_name ?>" >	
 		<div id="step_3_basic_info_container">
-			<div id="step_3_basic_info_company"><?php echo $company; ?></div>
-			<div id="step_3_basic_info_name"><?php echo $name; ?></div>
-			<div id="step_3_basic_info_phone"><span>Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><?php echo $phone; ?></div>
-			<div id="step_3_basic_info_email"><span>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><?php echo $email; ?></div>
-			<div id="step_3_basic_info_address"><span>Licence plate No.:&nbsp; </span><?php echo $licencePlate; ?></div>
+			<div class="step_3_items"><span>Entreprise: </span><?php echo $company; ?></div>
+			<div class="step_3_items"><span>Personne de contact: </span><?php echo $name; ?></div>
+			<div class="step_3_items"><span>Téléphone: </span><?php echo $phone; ?></div>
+			<div class="step_3_items"><span>E-mail: </span><?php echo $email; ?></div>
+			<div class="step_3_items"><span>Licence plate No.: </span><?php echo $licencePlate; ?></div>
 		</div>
 		
-		<div id="step_3_aed_info_container">
-			<div id="step_3_aed_info_title">INFORMATION ON THE AED</div>			
-			<div id="step_3_aed_info_category"><span>AED Category:&nbsp;&nbsp; </span><?php echo $category; ?></div>
-			<div id="step_3_aed_info_brand"><span>   AED Brand:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><?php echo $brand; ?></div>
-			<div id="step_3_aed_info_model"><span>   AED Model:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><?php echo $deaType; ?></div>
-			<div id="step_3_aed_info_serial"><span>  AED Serial No.:&nbsp; </span><?php echo $serial; ?></div>					
+		<div class="sectionContainers">
+			<div class="sectionTitle">ADRESSE DU DEA</div>
+			<div style="float:left; width:100%;">
+				<div class="step_3_items_left"><?php echo $fullAddress; ?></div>
+				<div class="step_3_items_right"><span>Lat: </span> <span id="theLat1"><?php echo $Lat; ?></span></div>
+				<div class="step_3_items_right"><span>Lng: </span><span  id="theLng1"><?php echo $Lng; ?></span></div>
+				<div class="step_3_boxedItem"><div class="infoSign">i</div> Vous pouvez déplacer le pointeur sur la carte si il n'est pas placé correctement </div>
+			</div>
+			<div class="result_map">
+				<div id="map-canvas1"></div>
+			</div>
 		</div>
 		
-		<div id="step_3_accessibility_info_container">
-			<div id="step_3_accessibility_info_title">ACCESSIBILITY</div>
-			<div id="step_3_accessibility_info_accessibility"><span>Make AED available to the public: </span><?php echo $accessibility; ?></div>
+		<div class="sectionContainers">
+			<div class="sectionTitle">INFORMATIONS SUR LE DEA</div>	
+			<div class="step_3_items"><span> Catégorie: </span><?php echo $category; ?></div>
+			<div class="step_3_items"><span> Marque: </span><?php echo $brand; ?></div>
+			<div class="step_3_items"><span> Modèle: </span><?php echo $deaType; ?></div>
+			<div class="step_3_items"><span> No. de série: </span><?php echo $serial; ?></div>					
+		</div>
+		
+		<div class="sectionContainers">
+			<div class="sectionTitle">PUBLICATION</div>
+			<div class="step_3_items"><span>Publier sur AED-Pointer: </span><?php echo $accessibilityString; ?></div>
 		</div>
 	</div>	
 	
-	
-	
-	
-	<form name="myForm" action="../AED_POINTER/record_step4.php" method="post">	
+	<form name="myForm" action="record_step4.php" onsubmit="return validateForm()" method="post">	
 		<?php echo $hiddenInputs; ?>
+
 		
-		<!-- TO FIX -->
 		<input type="hidden"  name="image" value="<?php echo $str2; ?>">
-		
-		<div id="submitContainer">
-			
-			<input id="submitButton" type="submit" value="SUBMIT" >		
+
+		<div id="step3_submitContainer">		
+			<input id="submitButton" type="submit" value="VALIDER" >		
 		</div>	
 	</form>
+</div>	
+<div style="width:100%; height:50px;">
+	
+	
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDSMTHUIyndywwgyws3_C34P5LognZxgLc&sensor=false"></script>
 	<script src="js/record_step3_map.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/validation_step3.js" type="text/javascript" charset="utf-8"></script>
 	
 	<script>
 		if (document.getElementById('hiddenType1').value== 0 || document.getElementById('hiddenType1').value==  1 || document.getElementById('hiddenType1').value== 2) {
@@ -150,7 +176,13 @@ else  {
 		else {
 			 document.getElementById('confirmBodyContainer1').style.display = "block";
 		}
-
+		
+		if (document.getElementById('hiddenType1').value== 1) {
+		      document.getElementById('companyVisible').style.display = "none";
+		}
+		else {
+			 document.getElementById('companyVisible').style.display = "block";
+		}
 	</script>
 </body>
 </html>
